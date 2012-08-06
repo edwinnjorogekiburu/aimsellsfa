@@ -1,0 +1,198 @@
+@import "bootstrap";
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 100px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 2.3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight:normal;
+}
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+/* header */
+
+#logo {
+  float: left;
+  margin: 5px 10px 0px 0px;
+  font-size: 1.2em;
+  color: #fff;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: normal;
+  line-height: 1;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+
+footer a {
+  color: #555;
+}  
+
+footer a:hover { 
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
+
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 8px;
+  height: auto;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+/* forms */
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+ }
+
+ /* sidebar */
+
+aside {
+  section {
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.6em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+/* Top Menu*/
+
+.header-menu{
+  height:39px;background:#f1f1f1;
+}
+
+.header-menu li{
+  padding-left: 20px; 
+  padding-right: 20px; 
+}
+.header-menu .nav{
+margin-left:10%;text-align:center;
+}
+.header-menu .nav > li > a{
+  color:#000000;
+  &:hover{color:#999;}
+}
+
+#home {background: url(image_path("application_home.png")) no-repeat scroll 5px 50%;padding-left:25px;}
+#employees {background: url(image_path("user_suit.png")) no-repeat scroll 5px 50%;padding-left:25px;}
+#company_structure {background: url(image_path("application_view_list.png")) no-repeat scroll 5px 50%;padding-left:25px;}
+#event_log {background: url(image_path("report_link.png")) no-repeat scroll 5px 50%;padding-left:25px;}
+
+#log_out {background: url(image_path("key_delete.png")) no-repeat scroll 5px 50%;padding-left:25px;}
