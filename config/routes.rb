@@ -1,4 +1,14 @@
 Aimsellsfa::Application.routes.draw do
+
+  root to: 'static_pages#home'
+  
+  match '/home', to: 'static_pages#home'
+  match '/about', to: 'static_pages#about'
+  match '/contactus', to: 'static_pages#contactus'
+  match '/location', to: 'static_pages#location'
+  match '/console', to: 'static_pages#console'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
