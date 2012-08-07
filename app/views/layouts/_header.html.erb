@@ -10,26 +10,18 @@
           <li><%= link_to "About", about_path %></li>
           <li><%= link_to "Contact Us", contactus_path %></li>
           <li><%= link_to "Location", "#" %></li>
-          <li><%= link_to "Sign In", "#" %></li>
+          <%  if signed_in? %>
+          <li><%= link_to "Management Console", console_path %></li>
+          <li><%= link_to "Sign Out", signout_path ,method: "delete" %></li>
+          <%  else  %>
+          <li><%= link_to "Sign Up", signup_path %></li>
+          <li><%= link_to "Sign In", signin_path %></li>
+          <%  end  %>
         </ul>
       </nav>
 
     </div>
   </div>
-<div class="navbar-inner header-menu">
-    <div class="container">
-      <!--
-        <nav>
-        <ul class="nav">
-          <li><%= link_to "Home", "#" , id: "home" %></li>
-          <li><%= link_to "Users/Employees", "#" , id: "employees" %></li>
-          <li><%= link_to "Company Structure", "#" , id: "company_structure"%></li>
-          <li><%= link_to "Event Log", "#" , id: "event_log" %></li>          
-          <li><%= link_to "Log Out", "#" , id: "log_out" %></li>    
-        </ul>
-      </nav>
 
-    -->
-    </div>
-</div>
 </header>
+
