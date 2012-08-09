@@ -1,9 +1,8 @@
 <% provide(:title, "Administrator Main Menu") %>
-<%= render "shared/administrator_menu" %>
 <h2>Administrator Main Menu</h2>
 
 <ol>
-<li><%= link_to "Users/Employees" , "" %></li>
+<li><%= link_to "Users/Employees" , employees_path %></li>
 <li><%= link_to "Company Structure" , "" %></li>
 <li><%= link_to "Event Log" , "" %></li>
 <li><%= link_to "Sign Out" , "" %></li>

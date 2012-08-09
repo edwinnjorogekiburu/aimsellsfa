@@ -1,0 +1,18 @@
+<% provide(:title , "Edit employee type") %>
+<div class="row">
+  <aside class="span4">
+    <section>
+     <%= render "shared/administrator_side_menu" %>  
+    </section>
+  </aside>
+<div class="span8"> 
+<div class="span6">	
+<h2>Edit employee type</h2>
+<%= form_for(@employee_type) do |f| %>
+      <%= render partial: 'shared/error_messages' , :locals => { :object => @employee_type }%>
+      <%= render partial: "employee_type_fields" , :locals => {:f => f } %>
+      <%= f.submit "Edit employee type", class: "btn btn-large btn-primary" %>
+<% end %>
+</div>
+</div>
+</div>

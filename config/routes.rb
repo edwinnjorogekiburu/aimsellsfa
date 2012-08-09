@@ -1,10 +1,17 @@
 Aimsellsfa::Application.routes.draw do
 
+  
+
   resources  :users
+  resources  :employees
   resources :sessions, only: [:new, :create, :destroy]
+  resources :employee_types
+
   root to: 'static_pages#home'
 
   match '/signup', to: 'users#new'
+
+  match "/create_employee", to: "employees#new" 
 
   match '/console', to: 'users#index'
   match '/signin',  to: 'sessions#new'

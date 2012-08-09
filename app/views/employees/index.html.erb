@@ -1,0 +1,18 @@
+<% provide(:title,"All Employees") %>
+<div class="row">
+  <aside class="span4">
+    <section>
+     <%= render "shared/administrator_side_menu" %>  
+    </section>
+  </aside>
+<div class="span8"> 
+<div class="span8">	
+<h2>All Employees</h2>
+
+<p><%= link_to "Create a new employee" , create_employee_path %></p>
+<ol class="users">
+	<%= render @employees %>
+</ol>
+</div>
+</div>
+</div>

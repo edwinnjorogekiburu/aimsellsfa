@@ -1,0 +1,18 @@
+<% provide(:title,"Create new employee") %>
+<div class="row">
+  <aside class="span4">
+    <section>
+     <%= render "shared/administrator_side_menu" %>  
+    </section>
+  </aside>
+<div class="span8"> 
+<div class="span6">	
+<h2>Create new employee</h2>
+    <%= form_for(@employee) do |f| %>
+      <%= render partial: 'shared/error_messages' , :locals => { :object => @employee }%>
+      <%= render partial: "employee_fields" , :locals => {:f => f } %>
+      <%= f.submit "Create new employee", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+</div>

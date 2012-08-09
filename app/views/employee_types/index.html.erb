@@ -1,0 +1,17 @@
+<% provide(:title, "All Employee Types") %>
+<div class="row">
+  <aside class="span4">
+    <section>
+     <%= render "shared/administrator_side_menu" %>  
+    </section>
+  </aside>
+<div class="span8"> 
+<div class="span6">	
+<h2>All Employee Types</h2>
+<p><%= link_to "Add an employee type" , new_employee_type_path %></p>
+<ol class="users">
+<%= render @employee_types %>
+</ol>
+</div>
+</div>
+</div>
