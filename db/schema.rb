@@ -11,22 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120808120435) do
+ActiveRecord::Schema.define(:version => 20120810131710) do
 
   create_table "employee_types", :force => true do |t|
     t.string   "name"
     t.string   "category"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "reports_to_type_id"
   end
 
   create_table "employees", :force => true do |t|
-    t.string   "name"
+    t.string   "first_name"
     t.integer  "employee_type_id"
     t.string   "contact_phone"
     t.integer  "reports_to_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.string   "last_name"
   end
 
   create_table "users", :force => true do |t|

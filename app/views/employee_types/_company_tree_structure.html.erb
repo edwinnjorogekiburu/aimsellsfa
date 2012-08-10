@@ -1,0 +1,10 @@
+<h2>Company Structure (Tree view) </h2>
+<p><b><%= ceo.name  %></b> |  <%= link_to "+Add a subordinate" , "#" %></p>
+<div class='caret subordinates'></div>
+<ul class="top_level_subordinate">
+<% for subordinate in ceo.subordinates  %>
+<li><b><%= subordinate.name %></b><span class="reports_to">  -  Reports to the <%= subordinate.reports_to_type.name %>  |  <%= link_to "+Add" , "#" %> | <%= link_to "Delete" , "#{}" %></span>
+<%= render partial: "subordinates" , :locals => { :subordinate => subordinate , :levels => @type_level_count }  %>
+</li>
+<% end %>
+</ul>

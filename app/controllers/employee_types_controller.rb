@@ -31,7 +31,9 @@ class EmployeeTypesController < ApplicationController
   end
 
   def index
-  	@employee_types = EmployeeType.find(:all)
+  	@employee_types = EmployeeType.paginate(page: params[:page],:per_page => 10)
+    @ceo = EmployeeType.first
+    @type_level_count = EmployeeType.count('reports_to_type_id',distinct: true)
   end
 
   def destroy
@@ -43,4 +45,6 @@ class EmployeeTypesController < ApplicationController
 	      redirect_to employee_types_path
   	end
   end
+
+ 
 end

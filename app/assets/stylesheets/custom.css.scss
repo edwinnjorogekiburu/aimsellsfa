@@ -45,7 +45,7 @@ h2 {
   font-weight: normal;
   color: #999;
 }
-aside h2{
+aside h2 , .company_structure h2{
   text-align:left;margin-bottom:15px;
 }
 
@@ -222,3 +222,27 @@ margin-left:7%;text-align:center;
 #modify_company_structure {background: url(image_path("table_edit.png")) no-repeat scroll 5px 50%;padding-left:25px;}
 #all_employees {background: url(image_path("folder_user.png")) no-repeat scroll 5px 50%;padding-left:25px;}
 #add_employee {background: url(image_path("user_add.png")) no-repeat scroll 5px 50%;padding-left:25px;}
+
+/* Company Structure*/
+
+.company_structure ul{
+  list-style:none;
+}
+.company_structure li{
+background: url(image_path("bullet.png")) no-repeat scroll 0px 0px transparent;padding-left:10px;
+}
+.company_structure p{
+  margin-bottom:0px;
+}
+
+.reports_to{
+font-size: 11px;color:#999999;padding:0px 0px 3px 0px;
+} 
+
+.top_level_subordinate{
+  margin-top:-10px;
+}
+.subordinates {
+margin-left:30px;margin-bottom:-10px;
+}
+

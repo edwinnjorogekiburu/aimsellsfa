@@ -1,0 +1,7 @@
+<h2>Company Structure</h2>
+<p><%= link_to "Add Employee Type" , new_employee_type_path %></p>
+<ol class="users">
+<%= will_paginate %>
+<%= render employee_types %>
+<%= will_paginate %>
+</ol>

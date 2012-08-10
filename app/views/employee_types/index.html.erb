@@ -6,12 +6,12 @@
     </section>
   </aside>
 <div class="span8"> 
-<div class="span6">	
-<h2>All Employee Types</h2>
-<p><%= link_to "Add an employee type" , new_employee_type_path %></p>
-<ol class="users">
-<%= render @employee_types %>
-</ol>
+<div class="span8">	
+<div class="company_structure">
+	<%= render partial: "company_tree_structure" , locals: { ceo: @ceo }  %>
+</div>
+<hr/>
+	<%= render partial: "employee_types" , locals: { employee_types: @employee_types }  %>
 </div>
 </div>
 </div>
