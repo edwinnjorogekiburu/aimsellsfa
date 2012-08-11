@@ -5,5 +5,5 @@
 <%= f.text_field :category %>
 
 <%= f.label :reports_to_type_id %>
-<%= f.collection_select(:reports_to_type_id , EmployeeType.all, :id , :name , :prompt => "Please select an employee type") %>
+<%= f.collection_select(:reports_to_type_id , EmployeeType.all, :id , :name , :prompt => "Please select an employee type" , :selected => params[:id] ) %>
 <p><%= link_to "Add Employee Type" , new_employee_type_path %></p>

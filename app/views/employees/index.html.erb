@@ -8,11 +8,12 @@
 <div class="span8"> 
 <div class="span8">	
 <h2>All Employees</h2>
-
 <p><%= link_to "Create a new employee" , create_employee_path %></p>
+<%= will_paginate %>
 <ol class="users">
 	<%= render @employees %>
 </ol>
+<%= will_paginate %>
 </div>
 </div>
 </div>

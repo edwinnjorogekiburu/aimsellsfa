@@ -1,7 +1,7 @@
 <li>
-	<%= link_to "#{employee.name}" , edit_employee_path(employee) %> 
-	reports to <%= link_to "#{employee.reports_to.name}" , edit_employee_path(employee.reports_to)  %>
+	<%= link_to "#{get_employee_full_name(employee)}" , edit_employee_path(employee) %> 
+	reports to <%= link_to "#{get_employee_full_name(employee.reports_to)}" , edit_employee_path(employee.reports_to)  %>
 	 | <%= employee.contact_phone %> | 
 	<%= link_to "Delete" , employee_path(employee) ,
-	 method: :delete, data: { confirm: "Are you sure you want to delete #{employee.name}?" } %>
+	 method: :delete, data: { confirm: "Are you sure you want to delete #{get_employee_full_name(employee)}?" } %>
 </li>

@@ -1,7 +1,8 @@
 <% if subordinate.subordinates.any? %>
 <% for s in subordinate.subordinates %>
 <ul>
-<li><%= s.name %><span class="reports_to">  -  Reports to the <%= s.reports_to_type.name %>  |  <%= link_to "+Add" , "#" %>     |  <%= link_to "Delete" , "#{}" %></span></li>
+<li><%= s.name %><span class="reports_to">  -  Reports to the <%= s.reports_to_type.name %>  |  
+	<%= link_to "+Add" , new_employee_type_path( id: s.id ) %>     |  <%= link_to "Delete" , "#{}" %></span></li>
 <%= render partial: "subordinates" , :locals => { :subordinate => s , :levels => @type_level_count }  %>
 </ul>
 <% end  %>

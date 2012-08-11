@@ -2,6 +2,10 @@ class EmployeeTypesController < ApplicationController
   
   def new
   	@employee_type = EmployeeType.new
+    if params[:id] 
+      senior=EmployeeType.find(params[:id])
+      flash.now[:notice] = "The employee type to be created will report to the #{senior.name}"
+    end
   end
 
   def create
