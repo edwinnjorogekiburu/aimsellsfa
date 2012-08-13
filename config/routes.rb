@@ -5,14 +5,15 @@ Aimsellsfa::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :employee_types
 
-  root to: 'static_pages#home'
+  match '/signin',  to: 'sessions#new'
+
+  root to: 'sessions#new'
 
   match '/signup', to: 'users#new'
 
   match "/create_employee", to: "employees#new" 
 
   match '/console', to: 'users#index'
-  match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
   
   match '/home', to: 'static_pages#home'
