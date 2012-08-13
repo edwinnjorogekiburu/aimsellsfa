@@ -1,7 +1,5 @@
 Aimsellsfa::Application.routes.draw do
 
-  
-
   resources  :users
   resources  :employees
   resources :sessions, only: [:new, :create, :destroy]

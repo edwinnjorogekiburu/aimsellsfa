@@ -1,4 +1,6 @@
 class EmployeesController < ApplicationController
+	
+	before_filter :signed_in_user, only: [:new,:index,:edit, :update,:create,:destroy]
 
 	def new
 		@employee = Employee.new
