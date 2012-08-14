@@ -214,10 +214,14 @@ margin-left:7%;text-align:center;
 }
 
 #home {background: url(image_path("application_home.png")) no-repeat scroll 5px 50%;padding-left:25px;}
-#employees {background: url(image_path("user_suit.png")) no-repeat scroll 5px 50%;padding-left:25px;}
+#employees , #agents {background: url(image_path("user_suit.png")) no-repeat scroll 5px 50%;padding-left:25px;}
 #company_structure {background: url(image_path("application_view_list.png")) no-repeat scroll 5px 50%;padding-left:25px;}
 #event_log {background: url(image_path("report_link.png")) no-repeat scroll 5px 50%;padding-left:25px;}
 #log_out {background: url(image_path("key_delete.png")) no-repeat scroll 5px 50%;padding-left:25px;}
+
+#locations {background: url(image_path("location.png")) no-repeat scroll 5px 50%;padding-left:25px;}
+
+#items {background: url(image_path("cart.png")) no-repeat scroll 5px 50%;padding-left:25px;}
 
 #modify_company_structure {background: url(image_path("table_edit.png")) no-repeat scroll 5px 50%;padding-left:25px;}
 #all_employees {background: url(image_path("folder_user.png")) no-repeat scroll 5px 50%;padding-left:25px;}

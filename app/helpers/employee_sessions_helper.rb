@@ -1,5 +1,5 @@
 module EmployeeSessionsHelper
-def sign_in(employee)
+  def employee_sign_in(employee)
     cookies.permanent[:remember_token] = employee.remember_token
     self.current_employee = employee
   end
@@ -16,24 +16,24 @@ def sign_in(employee)
     employee == current_employee
   end
   
-  def sign_in(employee)
+  def employee_sign_in(employee)
     cookies.permanent[:remember_token] = employee.remember_token
     self.current_employee = employee
   end
 
-  def signed_in?
+  def employee_signed_in?
     !current_employee.nil?
   end
 
-  def sign_out
+  def employee_sign_out
     self.current_employee = nil
     cookies.delete(:remember_token)
   end 
 
   def signed_in_employee
-    unless signed_in?
+    unless employee_signed_in?
       store_location
-      redirect_to signin_path, notice: "Please sign in." 
+      redirect_to employee_signin_path, notice: "Please sign in." 
     end
   end
 

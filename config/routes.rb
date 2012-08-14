@@ -17,11 +17,16 @@ Aimsellsfa::Application.routes.draw do
 
   match '/console', to: 'users#index'
   match '/signout', to: 'sessions#destroy', via: :delete
+
+  match '/employee_signout', to: 'employee_sessions#destroy', via: :delete
   
   match '/home', to: 'static_pages#home'
   match '/about', to: 'static_pages#about'
   match '/contactus', to: 'static_pages#contactus'
   match '/location', to: 'static_pages#location'
+  match '/employee_index', to: 'static_pages#employee_main_menu'
+
+  match '/employee_signin', to: 'employee_sessions#new'
 
 
   # The priority is based upon order of creation:
