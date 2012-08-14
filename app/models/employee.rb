@@ -1,6 +1,11 @@
 class Employee < ActiveRecord::Base
 
-	attr_accessible :first_name, :last_name, :contact_phone ,:employee_type_id , :reports_to_id
+	attr_accessible :first_name, :last_name, :contact_phone ,:employee_type_id , :reports_to_id ,:username, :email, :password, :password_confirmation
+
+	has_secure_password
+
+	before_save { |employee| employee.email = email.downcase }
+  	before_save :create_remember_token
 
 	has_one :employee_type 
 
@@ -15,4 +20,21 @@ class Employee < ActiveRecord::Base
 	validates :employee_type_id , presence: true
 	validates :reports_to_id , presence: true
 
+	validates :username, presence: true, length: { maximum: 50 } , uniqueness: { case_sensitive: false }
+  	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  	validates :email, presence:   true,
+                    format:     { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
+  	validates :password, presence: true, length: { minimum: 6 }
+  	validates :password_confirmation, presence: true
+
+  private
+
+	def create_remember_token
+	  	self.remember_token = SecureRandom.urlsafe_base64
+	end
+    
+    def full_name
+    	"#{first_name} #{last_name}"
+	end 
 end
