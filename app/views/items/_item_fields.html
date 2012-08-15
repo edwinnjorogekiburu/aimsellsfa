@@ -1,0 +1,16 @@
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :description %>
+<%= f.text_field :description %>
+
+<%= f.label :price %>
+<%= f.text_field :price %>
+
+<%= f.label :retail_price %>
+<%= f.text_field :retail_price %>
+
+
+<%= f.label :category %>
+<%= f.collection_select(:category_id , ItemCategory.all, :id , :name , :prompt => "Please select an Item Category") %>
+<p><%= link_to " Add new Item Category " , new_item_category_path  %></p>

@@ -1,0 +1,7 @@
+<h2>Create new item category</h2>
+<p><%= link_to "All item categories" , item_categories_path %></p>
+<%= form_for(@item_category) do |f| %>
+      <%= render partial: 'shared/error_messages' , :locals => { :object => @item_category }%>
+      <%= render partial: "item_category_fields" , :locals => {:f => f } %>
+      <%= f.submit "Create new item category", class: "btn btn-large btn-primary" %>
+<% end %>

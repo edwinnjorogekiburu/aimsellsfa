@@ -10,7 +10,7 @@ class Employee < ActiveRecord::Base
 	has_one :employee_type 
 
 	has_many :subordinates , foreign_key: "reports_to_id" , class_name: "Employee"
-	belongs_to :reports_to, class_name: "Employee"
+	belongs_to :reports_to , class_name: "Employee"
 
 	has_one :manager 
 
@@ -28,7 +28,6 @@ class Employee < ActiveRecord::Base
   	validates :password, presence: true, length: { minimum: 6 }
   	validates :password_confirmation, presence: true
 
-  private
 
 	def create_remember_token
 	  	self.remember_token = SecureRandom.urlsafe_base64

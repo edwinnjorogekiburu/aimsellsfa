@@ -1,0 +1,7 @@
+
+<h2>Create a new item</h2>
+<%= form_for(@item) do |f| %>
+      <%= render partial: 'shared/error_messages' , :locals => { :object => @item }%>
+      <%= render partial: "item_fields" , :locals => {:f => f } %>
+      <%= f.submit "Create item", class: "btn btn-large btn-primary" %>
+<% end %>

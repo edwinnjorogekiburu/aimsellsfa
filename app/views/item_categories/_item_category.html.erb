@@ -1,0 +1,2 @@
+<li><%= link_to "#{item_category.name}" , edit_item_category_path(item_category) , title: "Click to edit #{item_category.name}"%> 
+	| <%= link_to "Delete", item_category_path(item_category) , method: :delete , data: { confirm: "Are you sure you want to delete #{item_category.name}?" }%></li>

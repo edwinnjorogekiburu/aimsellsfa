@@ -250,3 +250,9 @@ font-size: 11px;color:#999999;padding:0px 0px 3px 0px;
 margin-left:30px;margin-bottom:-10px;
 }
 
+/* items */
+
+.table > thead , .table > tbody{
+  border-top:1px solid #000000;
+  border-bottom:1px solid #000000;padding-top:0px;padding-bottom:0px;
+}

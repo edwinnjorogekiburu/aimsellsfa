@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120813121849) do
+ActiveRecord::Schema.define(:version => 20120814114316) do
 
   create_table "employee_types", :force => true do |t|
     t.string   "name"
@@ -38,6 +38,22 @@ ActiveRecord::Schema.define(:version => 20120813121849) do
   add_index "employees", ["email"], :name => "index_employees_on_email", :unique => true
   add_index "employees", ["remember_token"], :name => "index_employees_on_remember_token"
   add_index "employees", ["username"], :name => "index_employees_on_username", :unique => true
+
+  create_table "item_categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "items", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.decimal  "price",        :precision => 10, :scale => 2
+    t.decimal  "retail_price", :precision => 10, :scale => 2
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
+    t.integer  "category_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"
