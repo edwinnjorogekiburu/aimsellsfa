@@ -1,4 +1,11 @@
-
+<% provide(:title,"All locations") %>
+<div class="row">
+  <aside class="span4">
+    <section>
+     <%= render "shared/employee_side_menu" %>  
+    </section>
+  </aside>
+<div class="span8"> 
 <h2>All locations</h2>
 <div class="company_structure">
 <%= render partial: "location_tree_structure" , locals: { parent_location: @parent_location }  %>
@@ -10,4 +17,7 @@
 <%= render @locations %>
 </ol>
 <%= will_paginate %>
+</div>
+</div>
+</div>
 

@@ -1,4 +1,4 @@
-<% provide(:title,"Add an agent type") %>
+<% provide(:title,"Edit agent type") %>
 <div class="row">
   <aside class="span4">
     <section>
@@ -6,12 +6,12 @@
     </section>
   </aside>
 <div class="span8"> 
-<h2>Add new agent type</h2>
+<h2>Edit agent type</h2>
 <p><%= link_to "All Agent Types" , agent_types_path %></p>
 <%= form_for(@agent_type) do |f| %>
       <%= render partial: 'shared/error_messages' , :locals => { :object => @agent_type }%>
       <%= render partial: "agent_type_fields" , :locals => {:f => f } %>
-      <%= f.submit "Add agent type", class: "btn btn-large btn-primary" %>
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
 <% end %>
 </div>
 </div>

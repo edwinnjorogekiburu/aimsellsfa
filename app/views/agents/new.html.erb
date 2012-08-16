@@ -1,3 +1,11 @@
+<% provide(:title,"Add agent") %>
+<div class="row">
+  <aside class="span4">
+    <section>
+     <%= render "shared/employee_side_menu" %>  
+    </section>
+  </aside>
+<div class="span8"> 
 <h2>Add an agent</h2>
 <p><%= link_to "All Agents" , agents_path %></p>
 <%= form_for(@agent) do |f| %>
@@ -5,3 +13,6 @@
       <%= render partial: "agent_fields" , :locals => {:f => f } %>
       <%= f.submit "Add agent", class: "btn btn-large btn-primary" %>
 <% end %>
+</div>
+</div>
+</div>

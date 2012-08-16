@@ -1,0 +1,23 @@
+<% provide(:title,"All routes") %>
+<div class="row">
+  <aside class="span4">
+    <section>
+     <%= render "shared/employee_side_menu" %>  
+    </section>
+  </aside>
+<div class="span8"> 
+<h2>All routes</h2>
+<p><%= link_to "Add new route" , new_route_path %></p>
+<%= will_paginate %>
+<table class="table">
+	<thead>
+		<tr><th>Name</th><th>Description</th><th>Location</th><th>Delete</th></tr>
+	</thead>
+<tbody>
+	<%= render @routes %>
+</tbody>
+</table>
+<%= will_paginate %>
+</div>
+</div>
+</div>

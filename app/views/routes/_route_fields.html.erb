@@ -1,0 +1,9 @@
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :description %>
+<%= f.text_area :description %>
+
+<%= f.label :location_id %>
+<%= f.collection_select(:location_id , Location.all, :id , :name , :prompt => "Please select a location" , 
+:selected => params[:id] ) %>

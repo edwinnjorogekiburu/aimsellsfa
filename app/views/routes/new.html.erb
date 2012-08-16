@@ -1,0 +1,19 @@
+<% provide(:title,"Edit agent type") %>
+<div class="row">
+  <aside class="span4">
+    <section>
+     <%= render "shared/employee_side_menu" %>  
+    </section>
+  </aside>
+<div class="span8"> 
+<h2>Add a route</h2>
+<p><%= link_to "All routes" , routes_path %></p>
+<h2>Create new route</h2>
+    <%= form_for(@route) do |f| %>
+      <%= render partial: 'shared/error_messages' , :locals => { :object => @route }%>
+      <%= render partial: "route_fields" , :locals => {:f => f } %>
+      <%= f.submit "Create new route", class: "btn btn-large btn-primary" %>
+<% end %>
+</div>
+</div>
+</div>

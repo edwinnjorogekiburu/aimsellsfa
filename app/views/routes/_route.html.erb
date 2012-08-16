@@ -1,0 +1,5 @@
+<tr>
+	<td><%= link_to "#{route.name}" , edit_route_path(route)  %></td><td><%= route.description %></td>
+	<td><%= link_to "#{route.location.name}" , edit_location_path(route.location) %></td>
+	<td><%= link_to "Delete" , route_path(route) , method: :delete , data: { confirm: "Are you sure want to delete #{route.name}?" }%></td>
+</tr>

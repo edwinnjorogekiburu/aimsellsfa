@@ -1,3 +1,11 @@
+<% provide(:title,"Edit location type") %>
+<div class="row">
+  <aside class="span4">
+    <section>
+     <%= render "shared/employee_side_menu" %>  
+    </section>
+  </aside>
+<div class="span8"> 
 <h2>Edit location type</h2>
 <p><%= link_to "All item categories" , item_categories_path %></p>
 <%= form_for(@location_type) do |f| %>
@@ -5,3 +13,6 @@
       <%= render partial: "location_type_fields" , :locals => {:f => f } %>
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
 <% end %>
+</div>
+</div>
+</div>

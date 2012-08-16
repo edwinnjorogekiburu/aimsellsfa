@@ -1,5 +1,6 @@
 Aimsellsfa::Application.routes.draw do
-
+  
+  resources :routes
   resources :location_types
   resources :locations
   resources :agents

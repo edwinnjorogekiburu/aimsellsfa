@@ -1,3 +1,11 @@
+<% provide(:title,"All items") %>
+<div class="row">
+  <aside class="span4">
+    <section>
+     <%= render "shared/employee_side_menu" %>  
+    </section>
+  </aside>
+<div class="span8"> 
 <h2>Inventory</h2>
 <p><%= link_to "Add a new item" , new_item_path %></p>
 
@@ -11,3 +19,6 @@
 </tbody>
 </table>
 <%= will_paginate %>
+</div>
+</div>
+</div>

@@ -1,3 +1,11 @@
+<% provide(:title,"All agents") %>
+<div class="row">
+  <aside class="span4">
+    <section>
+     <%= render "shared/employee_side_menu" %>  
+    </section>
+  </aside>
+<div class="span8"> 
 <h2>All agents</h2>
 <p><%= link_to "Add an agent" , new_agent_path  %></p>
 <%= will_paginate %>
@@ -10,3 +18,6 @@
 </tbody>
 </table>
 <%= will_paginate %>
+</div>
+</div>
+</div>
