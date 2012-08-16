@@ -11,7 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120814114316) do
+ActiveRecord::Schema.define(:version => 20120815114239) do
+
+  create_table "agent_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "agents", :force => true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "remember_token"
+    t.string   "name"
+    t.integer  "distributor_id"
+    t.string   "contact_name"
+    t.integer  "phone"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "type_id"
+  end
 
   create_table "employee_types", :force => true do |t|
     t.string   "name"

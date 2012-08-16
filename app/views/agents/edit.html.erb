@@ -1,0 +1,7 @@
+<h2>Edit agent</h2>
+<p><%= link_to "All Agents" , agents_path %></p>
+<%= form_for(@agent) do |f| %>
+      <%= render partial: 'shared/error_messages' , :locals => { :object => @agent }%>
+      <%= render partial: "agent_fields" , :locals => {:f => f } %>
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+<% end %>

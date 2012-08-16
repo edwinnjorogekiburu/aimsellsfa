@@ -1,0 +1,12 @@
+<h2>All agents</h2>
+<p><%= link_to "Add an agent" , new_agent_path  %></p>
+<%= will_paginate %>
+<table class="table">
+	<thead>
+		<tr><th>Name</th><th>Contact name</th><th>E-mail address</th><th>Contact phone</th><th>Delete</th></tr>
+	</thead>
+<tbody>
+<%= render @agents %>
+</tbody>
+</table>
+<%= will_paginate %>

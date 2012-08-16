@@ -1,0 +1,11 @@
+class CreateAgentTypes < ActiveRecord::Migration
+  def change
+    create_table :agent_types do |t|
+
+
+    	t.string :name
+
+      t.timestamps
+    end
+  end
+end

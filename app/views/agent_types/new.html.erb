@@ -1,0 +1,7 @@
+<h2>Add new agent type</h2>
+<p><%= link_to "All Agent Types" , agent_types_path %></p>
+<%= form_for(@agent_type) do |f| %>
+      <%= render partial: 'shared/error_messages' , :locals => { :object => @agent_type }%>
+      <%= render partial: "agent_type_fields" , :locals => {:f => f } %>
+      <%= f.submit "Add agent type", class: "btn btn-large btn-primary" %>
+<% end %>

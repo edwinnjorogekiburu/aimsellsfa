@@ -1,0 +1,28 @@
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :contact_name %>
+<%= f.text_field :contact_name %>
+
+<%= f.label :phone %>
+<%= f.text_field :phone %>
+
+<%= f.label :type_id , "Agent Type" %>
+<%= f.collection_select(:type_id , AgentType.all, :id , :name , :prompt => "Please select an agent type") %>
+<p><%= link_to "Add new agent type" , new_agent_type_path  %></p>
+
+<p>Agent login details</p>
+
+<%= f.label :username %>
+<%= f.text_field :username %>
+
+<%= f.label :email %>
+<%= f.text_field :email %>
+
+<%= f.label :password %>
+<%= f.password_field :password %>
+
+<%= f.label :password_confirmation %>
+<%= f.password_field :password_confirmation %>
+
+<%= f.hidden_field :distributor_id , value: current_employee.id %>

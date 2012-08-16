@@ -1,5 +1,8 @@
 Aimsellsfa::Application.routes.draw do
 
+
+  resources :agents
+  resources :agent_types
   resources :item_categories
   resources :items
   resources :users
