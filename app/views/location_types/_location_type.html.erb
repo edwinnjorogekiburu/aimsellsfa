@@ -1,0 +1,2 @@
+<li><%= link_to "#{location_type.name}" , edit_location_type_path(location_type) , title: "Click to edit #{location_type.name}"%> 
+	| <%= link_to "Delete", location_type_path(location_type) , method: :delete , data: { confirm: "Are you sure you want to delete #{location_type.name}?" }%></li>

@@ -1,0 +1,13 @@
+<h2>Location Structure (Tree view) </h2>
+<p><b><%= parent_location.name  %></b> |  <%= link_to "+Add a subordinate" , new_location_path(id: parent_location.id)%></p>
+<div class='caret subordinates'></div>
+<ul class="top_level_subordinate">
+<% for sub_location in parent_location.sub_locations  %>
+<li><b><%= sub_location.name %></b><span class="reports_to">  -  within <%= sub_location.parent_location.name %>  |  
+	<%= link_to "+Add" , new_location_path(id: sub_location.id) %> | 
+	<%= link_to "Delete" , location_path(sub_location) , method: :delete ,
+	 data: { confirm: "Are sure you want to delete #{sub_location.name} with all its sub locations" }%></span>
+<%= render partial: "sub_locations" , :locals => { :sub_location => sub_location  }  %>
+</li>
+<% end %>
+</ul>

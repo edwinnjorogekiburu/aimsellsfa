@@ -1,6 +1,7 @@
 Aimsellsfa::Application.routes.draw do
 
-
+  resources :location_types
+  resources :locations
   resources :agents
   resources :agent_types
   resources :item_categories

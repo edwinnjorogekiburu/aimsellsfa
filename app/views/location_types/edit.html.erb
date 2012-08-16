@@ -1,0 +1,7 @@
+<h2>Edit location type</h2>
+<p><%= link_to "All item categories" , item_categories_path %></p>
+<%= form_for(@location_type) do |f| %>
+      <%= render partial: 'shared/error_messages' , :locals => { :object => @location_type }%>
+      <%= render partial: "location_type_fields" , :locals => {:f => f } %>
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+<% end %>

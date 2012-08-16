@@ -1,0 +1,11 @@
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :parent_location_id , "Parent location" %>
+<%= f.collection_select(:parent_location_id , Location.all, :id , :name , :prompt => "Please select an parent location" , 
+:selected => params[:id] ) %>
+
+<%= f.label :type_id , "Location type" %>
+<%= f.collection_select(:type_id , LocationType.all, :id , :name , :prompt => "Please select a location type" ) %>
+
+<p><%= link_to "Add a new location type " , new_location_type_path %></p>

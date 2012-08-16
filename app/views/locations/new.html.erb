@@ -1,0 +1,7 @@
+<p><%= link_to "All locations" , locations_path %></p>
+<h2>Create new location</h2>
+    <%= form_for(@location) do |f| %>
+      <%= render partial: 'shared/error_messages' , :locals => { :object => @location }%>
+      <%= render partial: "location_fields" , :locals => {:f => f } %>
+      <%= f.submit "Create new location", class: "btn btn-large btn-primary" %>
+<% end %>

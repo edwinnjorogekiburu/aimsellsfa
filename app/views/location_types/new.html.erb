@@ -1,0 +1,7 @@
+<h2>Add location type </h2>
+<p><%= link_to "All location types" , location_types_path %></p>
+<%= form_for(@location_type) do |f| %>
+      <%= render partial: 'shared/error_messages' , :locals => { :object => @location_type }%>
+      <%= render partial: "location_type_fields" , :locals => {:f => f } %>
+      <%= f.submit "Add location type", class: "btn btn-large btn-primary" %>
+<% end %>

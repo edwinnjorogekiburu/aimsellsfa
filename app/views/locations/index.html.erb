@@ -1,0 +1,13 @@
+
+<h2>All locations</h2>
+<div class="company_structure">
+<%= render partial: "location_tree_structure" , locals: { parent_location: @parent_location }  %>
+</div>
+<hr/>
+<p><%= link_to "Add location" , new_location_path %></p>
+<%= will_paginate %>
+<ol class="users">
+<%= render @locations %>
+</ol>
+<%= will_paginate %>
+
