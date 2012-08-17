@@ -1,4 +1,7 @@
 class AgentsController < ApplicationController
+
+  before_filter :signed_in_employee, only: [:index,:new,:create,:edit,:update,:destroy]
+
   def new
   	@agent = Agent.new
   end

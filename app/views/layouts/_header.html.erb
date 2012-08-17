@@ -11,7 +11,7 @@
           <li><%= link_to "Contact Us", contactus_path %></li>
           <li><%= link_to "Location", "#" %></li>
           <%  if signed_in? %>
-          <li><%= link_to "Management Console", console_path %></li>
+          <li><%= link_to "Main Menu", administrator_index_path %></li>
           <li><%= link_to "Sign Out", signout_path ,method: "delete" %></li>
           <%  elsif employee_signed_in? %>
               <li><%= link_to "#{current_employee.full_name}", "#" %></li>

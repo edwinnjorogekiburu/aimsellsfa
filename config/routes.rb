@@ -16,13 +16,12 @@ Aimsellsfa::Application.routes.draw do
   match '/administrator/signin',  to: 'sessions#new'
   match '/signin',  to: 'employee_sessions#new'
 
-  root to: 'sessions#new'
+  root to: 'static_pages#home'
 
   match '/signup', to: 'users#new'
 
   match "/create_employee", to: "employees#new" 
 
-  match '/console', to: 'users#index'
   match '/signout', to: 'sessions#destroy', via: :delete
 
   match '/employee_signout', to: 'employee_sessions#destroy', via: :delete
@@ -31,9 +30,9 @@ Aimsellsfa::Application.routes.draw do
   match '/about', to: 'static_pages#about'
   match '/contactus', to: 'static_pages#contactus'
   match '/location', to: 'static_pages#location'
-  match '/employee_index', to: 'static_pages#employee_main_menu'
 
-  match '/employee_signin', to: 'employee_sessions#new'
+  match '/employee/index', to: 'static_pages#employee_main_menu'
+  match '/administrator/index', to: 'static_pages#administrator_main_menu'
 
 
   # The priority is based upon order of creation:

@@ -1,4 +1,6 @@
 class AgentTypesController < ApplicationController
+
+	before_filter :signed_in_employee, only: [:index,:new,:create,:edit,:update,:destroy]
 	
 	def index
 		@agent_types = AgentType.paginate(page: params[:page],:per_page => 20)

@@ -33,7 +33,7 @@ module EmployeeSessionsHelper
   def signed_in_employee
     unless employee_signed_in?
       store_location
-      redirect_to employee_signin_path, notice: "Please sign in." 
+      redirect_to signin_path, notice: "Please sign in." 
     end
   end
 

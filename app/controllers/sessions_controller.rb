@@ -1,6 +1,13 @@
 class SessionsController < ApplicationController
  
   def new
+    if signed_in?
+      redirect_to administrator_index_path
+    elsif employee_signed_in?   
+      redirect_to employee_index_path
+    else
+      
+    end
   end
 
   def create
@@ -8,7 +15,7 @@ class SessionsController < ApplicationController
   if user && user.authenticate(params[:session][:password])
     # Sign the user in and redirect to the user's show page.
     sign_in user
-    redirect_to users_path
+    redirect_back_or administrator_index_path
   else
     # Create an error message and re-render the signin form.
     flash.now[:error] = 'Invalid email/password combination'
@@ -17,8 +24,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-	sign_out
-    redirect_to root_path
+	   sign_out
+    redirect_to administrator_signin_path
   end
 
   def sign_out

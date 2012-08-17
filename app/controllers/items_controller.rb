@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+
+  before_filter :signed_in_employee, only: [:index,:new,:create,:edit,:update,:destroy]
+
   def index
   	@items = Item.paginate(page: params[:page],:per_page => 20)
   end

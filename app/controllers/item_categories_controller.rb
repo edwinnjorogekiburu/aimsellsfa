@@ -1,5 +1,7 @@
 class ItemCategoriesController < ApplicationController
 
+	before_filter :signed_in_employee, only: [:index,:new,:create,:edit,:update,:destroy]
+
 	def new
 		@item_category = ItemCategory.new
 	end

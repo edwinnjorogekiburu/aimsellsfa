@@ -1,2 +1,8 @@
 <% provide(:title," Home ") %>
-<h2><%= yield(:title) %></h2>
+<h2>Aimsell Sales Force | <%= yield(:title) %></h2>
+<div class="center hero-unit">
+ 
+ 		 <p><%= link_to "Administrator  | Sign in", administrator_signin_path,  class: "btn-custom btn btn-large btn-primary" %></p>
+ 		 <p><%= link_to "Employee | Sign in", signin_path,  class: "btn-custom btn btn-large btn-primary" %></p>
+
+</div>
