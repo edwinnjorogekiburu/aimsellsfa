@@ -13,7 +13,11 @@
           <%  if signed_in? %>
           <li><%= link_to "Management Console", console_path %></li>
           <li><%= link_to "Sign Out", signout_path ,method: "delete" %></li>
-          <%  else  %>
+          <%  elsif employee_signed_in? %>
+              <li><%= link_to "#{current_employee.full_name}", "#" %></li>
+              <li><%= link_to "Sign Out", employee_signout_path , method: "delete" %></li>
+          <% else %>
+          <li><%= link_to "Administrator Sign In", administrator_signin_path %></li>
           <li><%= link_to "Sign In", signin_path %></li>
           <%  end  %>
         </ul>

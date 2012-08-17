@@ -1,3 +1,3 @@
-<tr><td><%= link_to "#{agent.name}" , edit_agent_path(agent) %></td><td><%= agent.contact_name %></td>
+<tr><td><%= link_to "#{agent.name}" , edit_agent_path(agent) , title: "Click to edit #{agent.name}" %></td><td><%= agent.contact_name %></td>
 	<td><%= agent.email %></td><td><%= number_to_phone(agent.phone,:country_code => 254) %></td>
 	<td><%= link_to "Delete" , agent_path(agent) , method: :delete , data: { confirm: "Are you sure you want to delete #{agent.name}"}  %></td></tr>

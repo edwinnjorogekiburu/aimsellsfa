@@ -6,6 +6,6 @@ class Route < ActiveRecord::Base
 
 	validates :name , presence: true 
 	validates :location_id , presence: true
-	validates :description , presence: true
+	validates :description , presence: true  , length: { maximum: 255 }
 
 end

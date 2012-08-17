@@ -219,13 +219,17 @@ margin-left:7%;text-align:center;
 #event_log {background: url(image_path("report_link.png")) no-repeat scroll 5px 50%;padding-left:25px;}
 #log_out {background: url(image_path("key_delete.png")) no-repeat scroll 5px 50%;padding-left:25px;}
 
-#locations {background: url(image_path("location.png")) no-repeat scroll 5px 50%;padding-left:25px;}
+#locations , #modify_location_structure , #add_location_type {background: url(image_path("location.png")) no-repeat scroll 5px 50%;padding-left:25px;}
 
 #items {background: url(image_path("cart.png")) no-repeat scroll 5px 50%;padding-left:25px;}
+#add_item {background: url(image_path("cart_add.png")) no-repeat scroll 5px 50%;padding-left:25px;}
 
 #modify_company_structure {background: url(image_path("table_edit.png")) no-repeat scroll 5px 50%;padding-left:25px;}
 #all_employees {background: url(image_path("folder_user.png")) no-repeat scroll 5px 50%;padding-left:25px;}
-#add_employee {background: url(image_path("user_add.png")) no-repeat scroll 5px 50%;padding-left:25px;}
+#add_employee , #add_agent {background: url(image_path("user_add.png")) no-repeat scroll 5px 50%;padding-left:25px;}
+
+#routes {background: url(image_path("lorry.png")) no-repeat scroll 5px 50%;padding-left:25px;}
+#add_route {background: url(image_path("lorry_add.png")) no-repeat scroll 5px 50%;padding-left:25px;}
 
 /* Company Structure*/
 
@@ -255,4 +259,12 @@ margin-left:30px;margin-bottom:-10px;
 .table > thead , .table > tbody{
   border-top:1px solid #000000;
   border-bottom:1px solid #000000;padding-top:0px;padding-bottom:0px;
+}
+
+#route_description{
+  height:80px;
+}
+
+.indicator{
+  font-size:11px;margin:-3px 3px 6px 3px;color:#8B5A00;
 }

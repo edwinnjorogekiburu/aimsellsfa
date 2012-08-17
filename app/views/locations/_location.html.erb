@@ -4,4 +4,4 @@ located within <%= link_to "#{location.parent_location.name}" , edit_location_pa
 <% end %>
  | 
 	<%= link_to "Delete" , location_path(location) , method: :delete , 
-	data: { confirm: " Are you sure you want to delete #{location.name}? "} %> | <%= location.sub_locations.count %></li>
+	data: { confirm: " Are you sure you want to delete #{location.name}? "} %></li>

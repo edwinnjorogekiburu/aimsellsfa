@@ -1,3 +1,11 @@
+<% provide(:title,"All routes") %>
+<div class="row">
+  <aside class="span4">
+    <section>
+     <%= render "shared/employee_side_menu" %>  
+    </section>
+  </aside>
+<div class="span8"> 
 <h2>Employee main menu</h2>
 <ol>
 <li><%= link_to "Inventory" , items_path %></li>
@@ -6,3 +14,5 @@
 <li><%= link_to "Locations" , "#" %></li>
 <li><%= link_to "Routes" , "#" %></li>
 </ol>
+</div>
+</div>

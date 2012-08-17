@@ -1,17 +1,35 @@
 <h2>Main Menu</h2>
 <ul class="side_menu">
-<li><%= link_to "Home" , console_path , id: "home" %></li>
-<li><%= link_to "Users / Employees" , employees_path , id: "employees" %>
+<li><%= link_to "Home" , employee_index_path , id: "home" %></li>
+
+<li><%= link_to "Items" , items_path , id: "items" %>
 <ul>
-<li><%= link_to "All Employees" , employees_path , id: "all_employees" %></li>
-<li><%= link_to "Add an employee" , new_employee_path , id: "add_employee" %></li>
+<li><%= link_to "All Items" , items_path , id: "items" %></li>
+<li><%= link_to "Add an item" , new_item_path , id: "add_item" %></li>
 </ul>
 </li>
-<li><%= link_to "Company Structure" , employee_types_path , id: "company_structure" %>
+
+<li><%= link_to "Agents" , agents_path , id: "agents" %>
 <ul>
-<li><%= link_to "Modify company structure" , employee_types_path , id: "modify_company_structure" %></li>
+<li><%= link_to "All Agents" , agents_path , id: "agents" %></li>
+<li><%= link_to "Add an agent" , new_agent_path , id: "add_agent" %></li>
 </ul>
 </li>
-<li><%= link_to "Event Log" , "#"  , id: "event_log" %> </li>
-<li><%= link_to "Sign Out" , signout_path , method: "delete"  , id: "log_out"%></li>
+
+<li><%= link_to "Locations" , locations_path , id: "locations" %>
+<ul>
+<li><%= link_to "Modify location structure" , locations_path , id: "modify_location_structure" %></li>
+<li><%= link_to "Add location type" , new_location_type_path , id: "add_location_type" %></li>
+</ul>
+</li>
+
+
+<li><%= link_to "Routes" , routes_path , id: "routes" %>
+<ul>
+<li><%= link_to "All routes" , routes_path , id: "routes" %></li>
+<li><%= link_to "Add a route" , new_route_path , id: "add_route" %></li>
+</ul>
+</li>
+
+<li><%= link_to "Sign Out" , employee_signout_path , method: "delete"  , id: "log_out"%></li>
 </ul>

@@ -6,8 +6,8 @@
     </section>
   </aside>
 <div class="span8"> 
-<h2>Edit agent</h2>
 <p><%= link_to "All Agents" , agents_path %></p>
+<h2>Edit agent</h2>
 <%= form_for(@agent) do |f| %>
       <%= render partial: 'shared/error_messages' , :locals => { :object => @agent }%>
       <%= render partial: "agent_fields" , :locals => {:f => f } %>

@@ -13,7 +13,8 @@ Aimsellsfa::Application.routes.draw do
   resources :employee_sessions, only: [:new, :create, :destroy]
   resources :employee_types
 
-  match '/signin',  to: 'sessions#new'
+  match '/administrator/signin',  to: 'sessions#new'
+  match '/signin',  to: 'employee_sessions#new'
 
   root to: 'sessions#new'
 
