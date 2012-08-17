@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   before_filter :signed_in_employee, only: [:employee_main_menu]
-  before_filter :signed_in, only: [:administrator_main_menu]
+  before_filter :signed_in_user, only: [:administrator_main_menu]
 
   def home
     if signed_in?
