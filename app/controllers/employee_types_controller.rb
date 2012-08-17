@@ -38,8 +38,11 @@ class EmployeeTypesController < ApplicationController
 
   def index
   	@employee_types = EmployeeType.paginate(page: params[:page],:per_page => 10)
-    @ceo = EmployeeType.first
-    @type_level_count = EmployeeType.count('reports_to_type_id',distinct: true)
+    if @ceo = EmployeeType.first
+
+    else
+        @employee_type = EmployeeType.new
+    end
   end
 
   def destroy

@@ -8,7 +8,23 @@
 <div class="span8"> 
 <div class="span8">	
 <div class="company_structure">
+	<% if @ceo %>
 	<%= render partial: "company_tree_structure" , locals: { ceo: @ceo }  %>
+	<% else %>
+	<h2>Create the organization head</h2>
+	<%= form_for(@employee_type) do |f| %>
+      <%= render partial: 'shared/error_messages' , :locals => { :object => @employee_type }%>
+      <%= f.label :name %>
+	  <%= f.text_field :name %>
+
+      <%= f.label :category %>
+      <%= f.text_field :category %>
+
+      <%= f.hidden_field :reports_to_type_id , value: 0 %>
+
+      <%= f.submit "Create organization head", class: "btn btn-large btn-primary" %>
+<% end %>
+	<% end %>
 </div>
 <hr/>
 	<%= render partial: "employee_types" , locals: { employee_types: @employee_types }  %>
