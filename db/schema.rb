@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120821065331) do
+ActiveRecord::Schema.define(:version => 20120821110448) do
 
   create_table "agent_types", :force => true do |t|
     t.string   "name"
@@ -32,6 +32,17 @@ ActiveRecord::Schema.define(:version => 20120821065331) do
     t.datetime "updated_at",      :null => false
     t.integer  "type_id"
   end
+
+  create_table "dsa_routes", :force => true do |t|
+    t.integer  "agent_id"
+    t.integer  "route_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "dsa_routes", ["agent_id", "route_id"], :name => "index_dsa_routes_on_agent_id_and_route_id", :unique => true
+  add_index "dsa_routes", ["agent_id"], :name => "index_dsa_routes_on_agent_id", :unique => true
+  add_index "dsa_routes", ["route_id"], :name => "index_dsa_routes_on_route_id", :unique => true
 
   create_table "employee_types", :force => true do |t|
     t.string   "name"

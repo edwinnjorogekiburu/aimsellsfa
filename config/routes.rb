@@ -1,7 +1,13 @@
 Aimsellsfa::Application.routes.draw do
   
   resources :handsets
-  resources :routes
+  resources :routes do
+      member do
+          get :assign
+      end
+  end
+
+  resources :dsa_routes
   resources :location_types
   resources :locations
   resources :agents

@@ -1,0 +1,10 @@
+<h2>Assign <%= @route.name %> to an agent </h2>
+<%= form_tag( "/dsa_routes" , :method => :post ) do |f| %>
+
+<%= label_tag 'agent_id' , "Select an agent to assign to #{@route.name}" %>
+<%= collection_select( f ,:agent_id , Agent.all, :id , :name , :prompt => "Please select an agent") %>
+
+<%= hidden_field_tag 'route_id' , @route.id %>
+<%= submit_tag "Assign route" , class: "btn btn-large btn-primary" %>
+
+<% end %>
