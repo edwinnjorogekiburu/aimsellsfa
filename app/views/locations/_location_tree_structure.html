@@ -1,5 +1,5 @@
 <h2>Location Structure (Tree view) </h2>
-<p><b><%= parent_location.name  %></b> |  <%= link_to "+Add a subordinate" , new_location_path(id: parent_location.id)%></p>
+<p><b><%= parent_location.name  %></b> |  <%= link_to "+Add a sub location" , new_location_path(id: parent_location.id)%></p>
 <div class='caret subordinates'></div>
 <ul class="top_level_subordinate">
 <% for sub_location in parent_location.sub_locations  %>

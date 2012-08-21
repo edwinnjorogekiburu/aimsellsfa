@@ -6,9 +6,19 @@
     </section>
   </aside>
 <div class="span8"> 
+	<div class="span6">
 <h2>All locations</h2>
 <div class="company_structure">
+<% if @first_location %>
 <%= render partial: "location_tree_structure" , locals: { parent_location: @parent_location }  %>
+<% else %>
+<h2>Create the top level location</h2>
+ <%= form_for(@location) do |f| %>
+      <%= render partial: 'shared/error_messages' , :locals => { :object => @location }%>
+      <%= render partial: "location_fields" , :locals => {:f => f , first_location: @first_location  } %>
+      <%= f.submit "Create new location", class: "btn btn-large btn-primary" %>
+<% end %>
+<% end %>
 </div>
 <hr/>
 <p><%= link_to "Add location" , new_location_path %></p>
@@ -17,6 +27,7 @@
 <%= render @locations %>
 </ol>
 <%= will_paginate %>
+</div>
 </div>
 </div>
 

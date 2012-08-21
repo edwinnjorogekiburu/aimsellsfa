@@ -10,7 +10,7 @@
 <h2>Create new employee</h2>
     <%= form_for(@employee) do |f| %>
       <%= render partial: 'shared/error_messages' , :locals => { :object => @employee }%>
-      <%= render partial: "employee_fields" , :locals => {:f => f } %>
+      <%= render partial: "employee_fields" , :locals => {:f => f , :first_employee => @first_employee } %>
       <%= f.submit "Create new employee", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>

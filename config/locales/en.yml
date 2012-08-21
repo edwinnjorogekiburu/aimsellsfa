@@ -3,3 +3,8 @@ en:
     attributes:
       user:
         password_digest: "Password"
+en:
+  activerecord:
+    attributes:
+      employee:
+        password_digest: "Password"

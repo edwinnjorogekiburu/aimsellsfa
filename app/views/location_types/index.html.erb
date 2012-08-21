@@ -5,7 +5,8 @@
      <%= render "shared/employee_side_menu" %>  
     </section>
   </aside>
-<div class="span8"> 
+<div class="span8">
+<div class="span6"> 
 <p><%= link_to "Add a new location type" , new_location_type_path %></p>
 <h2>All location types</h2>
 <%= will_paginate %>
@@ -13,5 +14,6 @@
 <%= render @location_types %>
 </ol>
 <%= will_paginate %>
+</div>
 </div>
 </div>

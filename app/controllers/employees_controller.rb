@@ -4,6 +4,11 @@ class EmployeesController < ApplicationController
 
 	def new
 		@employee = Employee.new
+		if @first_employee = Employee.first
+			@first_employee = false
+		else
+			@first_employee = true
+		end
 	end
 
 	def create

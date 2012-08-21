@@ -9,7 +9,6 @@
           <li><%= link_to "Home", home_path %></li>
           <li><%= link_to "About", about_path %></li>
           <li><%= link_to "Contact Us", contactus_path %></li>
-          <li><%= link_to "Location", "#" %></li>
           <%  if signed_in? %>
           <li><%= link_to "Main Menu", administrator_index_path %></li>
           <li><%= link_to "Sign Out", signout_path ,method: "delete" %></li>

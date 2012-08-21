@@ -1,9 +1,12 @@
 <%= f.label :name %>
 <%= f.text_field :name %>
-
+<% if !first_location %>
 <%= f.label :parent_location_id , "Parent location" %>
 <%= f.collection_select(:parent_location_id , Location.all, :id , :name , :prompt => "Please select an parent location" , 
 :selected => params[:id] ) %>
+<% else %>
+<%= f.hidden_field :parent_location_id , value: 0 %>
+<% end %>
 
 <%= f.label :type_id , "Location type" %>
 <%= f.collection_select(:type_id , LocationType.all, :id , :name , :prompt => "Please select a location type" ) %>

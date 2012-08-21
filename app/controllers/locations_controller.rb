@@ -5,9 +5,10 @@ class LocationsController < ApplicationController
 	def index
 		@locations = Location.paginate(page: params[:page], per_page: 20)
 		 if @parent_location = Location.first
-
+		 	@first_location = true
 		 else
-		 	@parent_location=[]
+		 	@first_location = false	
+		 	@location = Location.new
 		 end
 	end
 
@@ -17,6 +18,12 @@ class LocationsController < ApplicationController
 			parent_location = Location.find(params[:id]) 
 			flash.now[:notice] = "Notice: The location to be created will be a sub location of #{parent_location.name}"
 		end
+ 		if @parent_location = Location.first
+		 	@first_location = false
+		 else
+		 	@first_location = true	
+		 end
+
 	end
 
 	def create
