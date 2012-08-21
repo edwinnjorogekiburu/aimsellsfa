@@ -3,6 +3,8 @@ class Agent < ActiveRecord::Base
 	
 	has_one :type , foreign_key: "type_id" , class_name: "AgentType"
 
+	has_one :handset
+
 	has_secure_password
 
 	before_save { |agent| agent.email = email.downcase }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120816113836) do
+ActiveRecord::Schema.define(:version => 20120821065331) do
 
   create_table "agent_types", :force => true do |t|
     t.string   "name"
@@ -58,6 +58,21 @@ ActiveRecord::Schema.define(:version => 20120816113836) do
   add_index "employees", ["email"], :name => "index_employees_on_email", :unique => true
   add_index "employees", ["remember_token"], :name => "index_employees_on_remember_token"
   add_index "employees", ["username"], :name => "index_employees_on_username", :unique => true
+
+  create_table "handsets", :force => true do |t|
+    t.string   "brand"
+    t.string   "serial"
+    t.string   "battery_serial"
+    t.string   "msisdn"
+    t.integer  "agent_id"
+    t.integer  "employee_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "handsets", ["battery_serial"], :name => "index_handsets_on_battery_serial", :unique => true
+  add_index "handsets", ["msisdn"], :name => "index_handsets_on_msisdn", :unique => true
+  add_index "handsets", ["serial"], :name => "index_handsets_on_serial", :unique => true
 
   create_table "item_categories", :force => true do |t|
     t.string   "name"

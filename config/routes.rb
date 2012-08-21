@@ -1,5 +1,6 @@
 Aimsellsfa::Application.routes.draw do
   
+  resources :handsets
   resources :routes
   resources :location_types
   resources :locations

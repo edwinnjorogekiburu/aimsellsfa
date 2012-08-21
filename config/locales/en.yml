@@ -8,3 +8,8 @@ en:
     attributes:
       employee:
         password_digest: "Password"
+en:
+  activerecord:
+    attributes:
+      agent:
+        password_digest: "Password"
