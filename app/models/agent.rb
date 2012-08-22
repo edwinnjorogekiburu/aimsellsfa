@@ -4,7 +4,7 @@ class Agent < ActiveRecord::Base
 	has_one :type , foreign_key: "type_id" , class_name: "AgentType"
 
 	has_one :dsa_route , foreign_key: "agent_id" , dependent: :destroy
-	has_one :route, through: :dsa_route
+	has_one :route, through: :dsa_route , source: :route
 
 	has_one :handset
 

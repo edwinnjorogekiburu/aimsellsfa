@@ -18,4 +18,33 @@ end
     end
    
   end
+
+   def edit   
+      @dsa_route=DsaRoute.find_by_route_id(params[:id])
+      @route=Route.find(params[:id])
+   end
+
+   def update
+    @dsa_route= DsaRoute.find(params[:id])
+    if @dsa_route.update_attributes(params[:dsa_route])
+      # Handle a successful update.
+      flash[:success] = "Changes saved successfully"
+      redirect_to routes_path
+    else
+      render 'edit'
+    end
+
+   end
+
+   def destroy
+    if DsaRoute.find_by_route_id(params[:id]).destroy
+      flash[:success] = "Agent has be deassigned from the route"
+      redirect_to routes_path
+    else
+        flash[:notice] = "Route deassignment failed" 
+        redirect_to routes_path
+    end
+  
+   end
+
 end

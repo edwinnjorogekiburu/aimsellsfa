@@ -1,7 +1,13 @@
 <tr>
 	<td><%= link_to "#{route.name}" , edit_route_path(route)  %></td><td><%= route.description %></td>
 	<td><%= link_to "#{route.location.name}" , edit_location_path(route.location) %></td>
-	<td><%= link_to "Assign route to agent" , new_dsa_route_path(route: route.id)%></td>
+	<td>
+		<% if route.agent %>
+		<%= link_to "#{route.agent.name}" , edit_dsa_route_path(route) , title: "Route already assigned to #{route.agent.name}, click to reassign route." %> | <%= link_to "Deassign route" , dsa_route_path(route) , method: :delete , data: {confirm: "Are you sure you want to deassign #{route.agent.name} from #{route.name} ?" }%>
+		<% else %>
+		<%= link_to "Assign route to agent" , new_dsa_route_path(route: route.id) %>
+		<% end %>
+	</td>
 	<td><%= link_to "Delete" , route_path(route) , method: :delete , 
 	data: { confirm: "Are you sure want to delete #{route.name}?"} %></td>
 </tr>

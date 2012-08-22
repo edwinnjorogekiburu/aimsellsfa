@@ -2,10 +2,10 @@ class DsaRoute < ActiveRecord::Base
 
 	attr_accessible :agent_id , :route_id
 
-	belongs_to :agent , class_name: "Agent"
-	belongs_to :route  , class_name: "Route"
+	belongs_to :agent 
+	belongs_to :route  
 
-  validates :agent_id, presence: true
-  validates :route_id, presence: true
+  validates :agent_id, presence: true , uniqueness: true
+  validates :route_id, presence: true , uniqueness: true
 
 end
