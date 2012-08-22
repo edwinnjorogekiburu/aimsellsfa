@@ -2,11 +2,10 @@ class Agent < ActiveRecord::Base
 	attr_accessible :username , :email , :password , :password_confirmation , :name , :distributor_id , :contact_name , :phone , :type_id
 	
 	has_one :type , foreign_key: "type_id" , class_name: "AgentType"
-
 	has_one :dsa_route , foreign_key: "agent_id" , dependent: :destroy
 	has_one :route, through: :dsa_route , source: :route
-
 	has_one :handset
+	has_many :stock_issues
 
 	has_secure_password
 
