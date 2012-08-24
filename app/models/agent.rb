@@ -5,7 +5,8 @@ class Agent < ActiveRecord::Base
 	has_one :dsa_route , foreign_key: "agent_id" , dependent: :destroy
 	has_one :route, through: :dsa_route , source: :route
 	has_one :handset
-	has_many :stock_issues
+	has_many :stock_issues , dependent: :destroy
+	has_many :onhand_quantities , dependent: :destroy
 
 	has_secure_password
 

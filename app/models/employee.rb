@@ -18,7 +18,7 @@ class Employee < ActiveRecord::Base
 
 	validates :first_name , presence: true 
 	validates :last_name , presence: true 
-	validates :contact_phone , presence: true
+	validates :contact_phone , presence: true ,:numericality => { :only_integer => true }
 	validates :employee_type_id , presence: true
 	validates :reports_to_id , presence: true
 

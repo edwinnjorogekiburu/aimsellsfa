@@ -6,7 +6,7 @@ class CreateStockIssues < ActiveRecord::Migration
     	t.integer :item_id
     	t.integer :opening_quantity
     	t.integer :issued_quantity
-    	t.decimal :unit_price , :decimal, :precision => 10, :scale => 2
+    	t.decimal :unit_price, :precision => 10, :scale => 2
 
       t.timestamps
     end

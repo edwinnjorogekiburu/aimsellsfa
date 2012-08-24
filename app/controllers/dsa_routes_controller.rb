@@ -1,5 +1,7 @@
 class DsaRoutesController < ApplicationController
 
+  before_filter :signed_in_employee, only: [:new,:create,:edit,:update,:destroy]
+
 def new
 	@dsa_route=DsaRoute.new
 	@route=Route.find_by_id(params[:route])

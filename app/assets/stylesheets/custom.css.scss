@@ -40,7 +40,7 @@ h1 {
 h2 {
   font-size: 1.7em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   text-align: center;
   font-weight: normal;
   color: #999;
@@ -234,6 +234,8 @@ margin-left:7%;text-align:center;
 #handsets {background: url(image_path("phone.png")) no-repeat scroll 5px 50%;padding-left:25px;}
 #add_handset {background: url(image_path("phone_add.png")) no-repeat scroll 5px 50%;padding-left:25px;}
 
+#stock_issue_history {background: url(image_path("application_view_detail.png")) no-repeat scroll 5px 50%;padding-left:25px;}
+
 /* Company Structure*/
 
 .company_structure ul{
@@ -258,6 +260,10 @@ margin-left:30px;margin-bottom:-10px;
 }
 
 /* items */
+
+.table th , .table td{
+  text-align:center;
+}
 
 .table > thead , .table > tbody{
   border-top:1px solid #000000;

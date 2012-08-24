@@ -1,0 +1,16 @@
+<% provide(:title,"Issue stock ") %>
+<div class="row">
+  <aside class="span4">
+    <section>
+     <%= render "shared/employee_side_menu" %>  
+    </section>
+  </aside>
+<div class="span8"> 
+<h2>Issue stock to agent</h2>
+    <%= form_for(@stock_issue) do |f| %>
+      <%= render partial: 'shared/error_messages' , :locals => { :object => @stock_issue }%>
+      <%= render partial: "stock_issue_fields" , :locals => {:f => f } %>
+      <%= f.submit "Issue stock", class: "btn btn-large btn-primary" %>
+<% end %>
+</div>
+</div>
