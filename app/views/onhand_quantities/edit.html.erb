@@ -1,0 +1,16 @@
+<% provide(:title, "Sell Item") %>
+<div class="row">
+	<aside class="span4">
+		<section>
+			<%= render "shared/agent_side_menu"%>
+		</section>
+	</aside>
+	<div class="span8">
+		<h2>Sell an Item &raquo; <%= @onhand_quantity.item.name %></h2>
+		<%= form_for(@onhand_quantity) do |f| %>
+
+			
+			<%= f.submit "Sell Item", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>
