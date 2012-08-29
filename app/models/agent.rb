@@ -7,6 +7,7 @@ class Agent < ActiveRecord::Base
 	has_one :handset
 	has_many :stock_issues , dependent: :destroy
 	has_many :onhand_quantities , dependent: :destroy
+	has_many :cash_ins
 
 	has_secure_password
 

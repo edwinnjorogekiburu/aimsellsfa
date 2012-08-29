@@ -4,6 +4,7 @@ class Item < ActiveRecord::Base
 
 	has_one :category , foreign_key: "category_id" , class_name: "ItemCategory"
 	has_many :stock_issues
+	has_many :cash_ins
 
 	validates :name , presence: true 
 	validates :description , presence: true 
