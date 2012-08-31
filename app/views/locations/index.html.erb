@@ -15,7 +15,7 @@
 <h2>Create the top level location</h2>
  <%= form_for(@location) do |f| %>
       <%= render partial: 'shared/error_messages' , :locals => { :object => @location }%>
-      <%= render partial: "location_fields" , :locals => {:f => f , first_location: @first_location  } %>
+      <%= render partial: "location_fields" , :locals => {:f => f , first_location: true  } %>
       <%= f.submit "Create new location", class: "btn btn-large btn-primary" %>
 <% end %>
 <% end %>
