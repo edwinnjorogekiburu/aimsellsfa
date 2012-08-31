@@ -3,11 +3,23 @@ class OnhandQuantitiesController < ApplicationController
   before_filter :signed_in_agent
   
   def index
-  	@onhand_quantities = OnhandQuantity.paginate(page: params[:page], :conditions => [ "agent_id = ?", current_agent.id ])
+    if Outlet.find_by_id(params[:outlet])
+    	@onhand_quantities = OnhandQuantity.paginate(page: params[:page], :conditions => [ "agent_id = ?", current_agent.id ])
+      check_into_outlet
+    else
+      flash[:notice]="Please select an outlet to check into."
+      redirect_to outlets_path
+    end
+ 
   end
 
   def edit
-  	@onhand_quantity = OnhandQuantity.find(params[:id], :conditions => [ "agent_id = ?", current_agent.id ])
+  	if checked_in?
+      @onhand_quantity = OnhandQuantity.find(params[:id], :conditions => [ "agent_id = ?", current_agent.id ])
+    else
+      flash[:notice]= "Please Check into an Outlet."
+      redirect_to outlets_path
+    end
   end
 
   def update
@@ -43,5 +55,26 @@ class OnhandQuantitiesController < ApplicationController
      obj.to_s.match(/\A[+-]?\d+?(\.\d+)?\Z/) == nil ? false : true
   end
 
+  def check_into_outlet
+    cookies[:outlet_id] = params[:outlet]
+  end
+
+  def checked_in?
+    if Outlet.find_by_id(cookies[:outlet_id])
+      return true
+    else
+      return false
+    end
+  end
+
+  def checkout
+    if cookies.delete(:outlet_id)
+      redirect_to outlets_path
+      flash[:success]= "Checked out of Outlet successfully."
+    else
+      redirect_to outlets_path
+      flash[:notice]= "Could not check you out of the outlet"
+    end
+  end
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120829073555) do
+ActiveRecord::Schema.define(:version => 20120831064329) do
 
   create_table "agent_types", :force => true do |t|
     t.string   "name"
@@ -133,6 +133,16 @@ ActiveRecord::Schema.define(:version => 20120829073555) do
   end
 
   add_index "onhand_quantities", ["agent_id", "item_id"], :name => "index_onhand_quantities_on_agent_id_and_item_id", :unique => true
+
+  create_table "outlets", :force => true do |t|
+    t.integer  "agent_id"
+    t.integer  "route_id"
+    t.string   "name"
+    t.string   "contact_name"
+    t.string   "contact_phone"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "routes", :force => true do |t|
     t.integer  "location_id"

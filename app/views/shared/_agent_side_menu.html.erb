@@ -1,1 +1,22 @@
-side menu
+<h2>Main Menu</h2>
+<ul class="side_menu">
+
+<li><%= link_to "Home", agent_index_path, id: "home" %></li>
+
+<li><%= link_to "Outlet", outlets_path, id: "outlets" %>
+	<ul>
+		<li><%= link_to "View Outlets", outlets_path, id: "outlets" %></li>
+		<li><%= link_to "Add Outlet", new_outlet_path, id: "add_outlets" %></li>
+	</ul>
+</li>
+
+<li><%= link_to "My stock", onhand_quantities_path, id: "assigned" %>
+	<ul>
+		<li><%= link_to "View Assigned Stock", onhand_quantities_path, id: "assigned" %></li>
+		<li><%= link_to "Sell Stock", '#', id: "add_assigned" %></li>
+	</ul>
+</li>
+
+
+<li><%= link_to "Sign Out", agent_signout_path, id: "log_out" %></li>
+</ul>

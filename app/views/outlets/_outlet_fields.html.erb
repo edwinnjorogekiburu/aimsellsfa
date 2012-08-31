@@ -1,0 +1,11 @@
+<%= f.hidden_field :agent_id, value: current_agent.id %>
+<%= f.hidden_field :route_id, value: current_agent.route.id %>
+
+<%= f.label :name, "Outlet Name" %>
+<%= f.text_field :name %>
+
+<%= f.label :contact_name, "Contact Name" %>
+<%= f.text_field :contact_name %>
+
+<%= f.label :contact_phone, "Contact Phone" %>
+<%= f.text_field :contact_phone, placeholder: "Number must start with 0" %>

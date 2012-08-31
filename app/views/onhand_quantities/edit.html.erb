@@ -9,9 +9,9 @@
 		<h2>Sell an Item &raquo; <%= @onhand_quantity.item.name %></h2>
 		<%= form_tag( "/onhand_quantities/#{params[:id]}" , :method => :put ) do %>
 		      <%= label_tag 'quantity_sold' , 'Enter amount sold to outlet' %>
-		      <%= text_field_tag 'quantity_sold' ,' ', value: params[:quantity_sold] %>
+		      <%= text_field_tag 'quantity_sold' ," ", value: params[:quantity_sold] %>
 		      <%= label_tag "cash_received" , " Cash received from outlet "%>
-		      <%= text_field_tag "cash_received" ,' ', value: params[:cash_received] %>
+		      <%= text_field_tag "cash_received" ," ", value: params[:cash_received] %>
 		<%= submit_tag "Sell Item", class: "btn btn-large btn-primary" %>
 		<% end %>
 	</div>

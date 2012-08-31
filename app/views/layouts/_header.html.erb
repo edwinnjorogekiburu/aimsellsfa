@@ -32,6 +32,8 @@
 <%= render "shared/administrator_menu" %>
 <% elsif employee_signed_in? %>
 <%= render "shared/employee_menu" %>
-<% end  %>
+<% elsif agent_signed_in? %>
+<%= render "shared/agent_menu" %>
+<% end %>
 </header>
 

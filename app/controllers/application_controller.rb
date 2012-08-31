@@ -4,5 +4,6 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include EmployeeSessionsHelper
   include AgentSessionsHelper
+  include OutletsHelper
   
 end

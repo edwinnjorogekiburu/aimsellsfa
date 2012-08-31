@@ -1,0 +1,21 @@
+<% provide(:title, "New Outlet") %>
+
+<div class="row">
+	<aside class="span4">
+		<section>
+			<%= render "/shared/agent_side_menu" %>
+		</section>
+	</aside>
+
+	<div class="span8">
+		
+		<p><%= link_to "View all routes" , outlets_path %></p>
+		<h2>Edit Outlet</h2>
+
+		<%= form_for(@outlet) do |f| %>
+			<%= render partial: "shared/error_messages", :locals => {:object => @outlet} %>
+			<%= render partial: "outlet_fields", :locals => {:f => f } %>
+			<%= f.submit "Edit an Outlet", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>

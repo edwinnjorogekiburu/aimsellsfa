@@ -236,6 +236,12 @@ margin-left:7%;text-align:center;
 
 #stock_issue_history {background: url(image_path("application_view_detail.png")) no-repeat scroll 5px 50%;padding-left:25px;}
 
+#assigned {background: url(image_path("basket.png")) no-repeat scroll 5px 50%;padding-left:25px;}
+#add_assigned {background: url(image_path("basket_remove.png")) no-repeat scroll 5px 50%;padding-left:25px;}
+
+#outlets {background: url(image_path("house.png")) no-repeat scroll 5px 50%;padding-left:25px;}
+#add_outlets {background: url(image_path("house_go.png")) no-repeat scroll 5px 50%;padding-left:25px;}
+
 /* Company Structure*/
 
 .company_structure ul{

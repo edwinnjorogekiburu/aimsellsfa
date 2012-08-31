@@ -1,0 +1,24 @@
+<% provide(:title, "Outlets") %>
+
+<div class="row">
+	<aside class="span4">
+		<section>
+			<%= render "/shared/agent_side_menu" %>
+		</section>
+	</aside>
+
+	<div class="span8">
+	<p>
+		<%= link_to "Add an Outlet", new_outlet_path %>
+	</p>
+		<h2>My Outlets &raquo; Select an Outlet to Checkin &raquo; Route : <%= current_agent.route.name%></h2>
+		<table class="table">
+			<thead>
+				<tr><th>Outlet Name</th><th>Route</th><th>Contact Name</th><th>Contact Phone</th><th>Edit</th><th>Delete</th></tr>
+			</thead>
+			<tbody>
+				<%= render @outlets %>
+			</tbody>
+		</table>
+	</div>
+</div>
