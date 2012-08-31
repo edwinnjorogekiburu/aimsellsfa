@@ -3,11 +3,15 @@ class EmployeeTypesController < ApplicationController
   before_filter :signed_in_user, only: [:new,:index,:edit, :update,:create,:destroy]
   
   def new
+    if @ceo = EmployeeType.first
   	@employee_type = EmployeeType.new
     if params[:id] 
       senior=EmployeeType.find(params[:id])
       flash.now[:notice] = "The employee type to be created will report to the #{senior.name}"
     end
+  else
+    redirect_to employee_types_path
+  end
   end
 
   def create
