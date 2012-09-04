@@ -3,7 +3,7 @@ class StockIssue < ActiveRecord::Base
 
 	belongs_to :agent
 	belongs_to :item
-
+	
 	validates :agent_id , presence: true
 	validates :item_id , presence: true
 	validates :opening_quantity , presence: true

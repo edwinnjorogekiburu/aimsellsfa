@@ -5,6 +5,8 @@ class SessionsController < ApplicationController
       redirect_to administrator_index_path
     elsif employee_signed_in?   
       redirect_to employee_index_path
+    elsif agent_signed_in?
+      redirect_to agent_index_path
     else
       
     end

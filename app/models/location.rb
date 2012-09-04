@@ -8,5 +8,4 @@ class Location < ActiveRecord::Base
 
  validates :name , presence: true
  validates :parent_location_id , presence: true
- validates :type_id , presence: true
 end

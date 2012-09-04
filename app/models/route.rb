@@ -4,6 +4,7 @@ class Route < ActiveRecord::Base
 
 	has_one :dsa_route , foreign_key: "route_id" , dependent: :destroy
 	has_one :agent, through: :dsa_route , source: :agent
+	has_many :outlets
 
 	belongs_to :location , class_name: "Location"
 

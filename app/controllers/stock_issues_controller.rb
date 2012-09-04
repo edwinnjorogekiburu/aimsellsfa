@@ -12,9 +12,10 @@ class StockIssuesController < ApplicationController
       # Handle a successful save.
       if @onhand_quantity=OnhandQuantity.find_by_item_id(params[:stock_issue][:item_id] , conditions: " agent_id = #{params[:stock_issue][:agent_id]} " )
       	#increment the onhand quantity
-      		@onhand_quantity.increment!(:onhand_quantity, by = params[:stock_issue][:issued_quantity].to_i ) 
-		      flash[:success] = "Stock issued successfully"
-		      redirect_to stock_issues_path
+      	@onhand_quantity.increment!(:onhand_quantity, by = params[:stock_issue][:issued_quantity].to_i ) 
+		
+		record_transaction(@stock_issue.agent.id , current_employee.id , cookies[:outlet_id] , @stock_issue.item.id , 1 , @stock_issue.unit_price, @stock_issue.issued_quantity , 0 , 0 )
+		redirect_to stock_issues_path
       else
       	#create a new record with the agent id , item id and the on hand quantity
       	@onhand_quantity=OnhandQuantity.new(agent_id: params[:stock_issue][:agent_id],item_id: params[:stock_issue][:item_id],onhand_quantity: params[:stock_issue][:issued_quantity])
@@ -44,17 +45,16 @@ class StockIssuesController < ApplicationController
 		
 		if is_numeric? params[:quantity_returned] 
 			if @stock_issue.issued_quantity >= params[:quantity_returned].to_i
-
 			    if @stock_issue.decrement!(:issued_quantity, by = params[:quantity_returned].to_i)
 			      # Handle a successful update.
 			      @onhand_quantity = OnhandQuantity.find_by_item_id(@stock_issue.item_id , conditions: " agent_id = #{@stock_issue.agent_id} " )
-				     if @onhand_quantity.decrement!(:onhand_quantity, by = params[:quantity_returned].to_i)
-				      flash[:success] = "Stock returned successfully"
-				      redirect_to stock_issues_path
-				  else
-				  	flash[:notice] = "Onhand quantity deduction failed"
-			      	render 'edit'
-				  end
+				    if @onhand_quantity.decrement!(:onhand_quantity, by = params[:quantity_returned].to_i)
+				    	flash[:success] = "Stock returned successfully"
+				      	#redirect_to stock_issues_path
+				    else
+				  		flash[:notice] = "Onhand quantity deduction failed"
+			      		render 'edit'
+				  	end
 			    else
 			      render 'edit'
 			    end
