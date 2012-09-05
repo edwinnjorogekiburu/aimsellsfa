@@ -4,15 +4,8 @@ class MaterialTransaction < ActiveRecord::Base
 
 	belongs_to :agent
 	belongs_to :item
-<<<<<<< HEAD
-<<<<<<< HEAD
-	has_one :transaction_type
-=======
+
 	has_one :transaction_type, dependent: :destroy
->>>>>>> corrections
-=======
-	has_one :transaction_type, dependent: :destroy
->>>>>>> corrections
 
 	validates :agent_id, presence: true
 	validates :employee_id, presence: true
