@@ -4,7 +4,11 @@ class Route < ActiveRecord::Base
 
 	has_one :dsa_route , foreign_key: "route_id" , dependent: :destroy
 <<<<<<< HEAD
+<<<<<<< HEAD
 	has_one :agent, through: :dsa_route , source: :agent
+=======
+	has_one :agent, through: :dsa_route , source: :agent , dependent: :destroy
+>>>>>>> corrections
 =======
 	has_one :agent, through: :dsa_route , source: :agent , dependent: :destroy
 >>>>>>> corrections

@@ -3,8 +3,13 @@ class Item < ActiveRecord::Base
 	attr_accessible :name , :description , :price , :retail_price , :category_id
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	has_one :category , foreign_key: "category_id" , class_name: "ItemCategory"
 	has_many :stock_issues
+=======
+	has_one :category , foreign_key: "category_id" , class_name: "ItemCategory" , dependent: :destroy
+	has_many :stock_issues , dependent: :destroy
+>>>>>>> corrections
 =======
 	has_one :category , foreign_key: "category_id" , class_name: "ItemCategory" , dependent: :destroy
 	has_many :stock_issues , dependent: :destroy
