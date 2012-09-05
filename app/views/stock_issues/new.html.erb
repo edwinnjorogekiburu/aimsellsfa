@@ -10,7 +10,11 @@
     <%= form_for(@stock_issue) do |f| %>
       <%= render partial: 'shared/error_messages' , :locals => { :object => @stock_issue }%>
       <%= render partial: "stock_issue_fields" , :locals => {:f => f } %>
+<<<<<<< HEAD
       <%= f.submit "Issue stock", class: "btn btn-large btn-primary" %>
+=======
+      <%= f.submit "Issue stock", class: "btn btn-large btn-primary" , disable_with: "Please wait..." %>
+>>>>>>> corrections
 <% end %>
 </div>
 </div>
