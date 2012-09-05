@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<h2>Reassign <%= @route.name %> to an agent </h2>
-=======
-=======
->>>>>>> corrections
 <% provide(:title, "Reassign Route") %>
 <div class="row">
   <aside class="span4">
@@ -14,26 +8,18 @@
 <div class="span8"> 
 <div class="span8">	
 	<h2>Reassign <%= @route.name %> to an agent </h2>
-<<<<<<< HEAD
->>>>>>> corrections
-=======
->>>>>>> corrections
+
 <%= form_for(@dsa_route) do |f| %>
 <%= render partial: 'shared/error_messages' , :locals => { :object => @dsa_route }%>
 <%= render partial: "dsa_route_fields" , :locals => {:f => f } %>
 <%= submit_tag "Save changes" , class: "btn btn-large btn-primary" %>
-<<<<<<< HEAD
-<<<<<<< HEAD
 <% end %>
-=======
+
 <% end %>
 </div>
 </div>
 </div>
->>>>>>> corrections
-=======
 <% end %>
 </div>
 </div>
 </div>
->>>>>>> corrections
