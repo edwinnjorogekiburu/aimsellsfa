@@ -1,0 +1,3 @@
+<tr><td><%= link_to "#{handset.brand}" , edit_handset_path(handset) , title: "Click to reassign/edit hand set "%></td>
+	<td><%= handset.agent.name %></td><td><%= link_to "Delete" , handset_path(handset) ,
+ method: :delete , data: {confirm: "Are you sure you want to delete #{handset.brand} ? "}%></td></tr>

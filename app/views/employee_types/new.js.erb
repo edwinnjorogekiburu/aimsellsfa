@@ -1,0 +1,14 @@
+$("#employee-type-form").dialog({
+  autoOpen: true,
+  height: 600,
+  width: 600,
+  modal: true,
+  title: 'New Employee Type',
+  buttons: {
+    "Edit": function() { $("#").submit() },
+  },
+  open: function() {
+    $("#employee-type-form").dialog({ autoOpen: false, title: "New Boots", draggable: true, resizable: false, modal: true, width:'auto'});
+    $("#employee-type-form").html("<%= escape_javascript(render('shared/test')) %>");
+  }
+});

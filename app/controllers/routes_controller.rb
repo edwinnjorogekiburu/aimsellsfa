@@ -47,4 +47,8 @@ class RoutesController < ApplicationController
   	end 
 	end
 
+	def assign
+		@route=Route.find(params[:id])
+	end
+
 end

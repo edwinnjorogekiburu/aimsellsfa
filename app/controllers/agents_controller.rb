@@ -18,15 +18,15 @@ class AgentsController < ApplicationController
   end
 
   def index
-  	@agents = Agent.paginate(page: params[:page],:per_page => 20)
+  	@agents = Agent.paginate( page: params[:page],:per_page => 20, conditions: " distributor_id = #{current_employee.id} ")
   end
 
   def edit
-  	@agent = Agent.find(params[:id])
+  	@agent = Agent.find(params[:id],:conditions => [ "distributor_id = ?", current_employee.id ])
   end
 
   def update
-	@agent = Agent.find(params[:id])
+	@agent = Agent.find(params[:id] , :conditions => [ "distributor_id = ?", current_employee.id ])
     if @agent.update_attributes(params[:agent])
       # Handle a successful update.
       flash[:success] = "Changes saved successfully"
@@ -38,7 +38,7 @@ class AgentsController < ApplicationController
   end
 
   def destroy
-  	if Agent.find(params[:id]).destroy
+  	if Agent.find(params[:id],:conditions => [ "distributor_id = ?", current_employee.id ]).destroy
 	    flash[:success] = "Agent deleted."
 	    redirect_to agents_path
   	else

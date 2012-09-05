@@ -1,0 +1,16 @@
+
+<%= label_tag :agent_id , "Select an agent to issue with stock" %>
+<%= f.collection_select(:agent_id , Agent.all, :id , :name , :prompt => "Please select an agent") %>
+
+<%= label_tag :item_id , "Select an item to issue with stock" %>
+<%= f.collection_select(:item_id , Item.all, :id , :name , :prompt => "Please select an item") %>
+
+<%= label_tag :unit_price , "Retail price of stock (Kshs) " %>
+<%= f.text_field :unit_price  %>
+
+<%= f.hidden_field :opening_quantity , value: 0 %>
+
+<%= f.hidden_field :employee_id , value: current_employee.id %>
+
+<%= label_tag :issued_quantity , " Quantity to issue to agent " %>
+<%= f.text_field :issued_quantity %>

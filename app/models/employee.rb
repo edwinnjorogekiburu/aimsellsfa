@@ -9,6 +9,8 @@ class Employee < ActiveRecord::Base
 
 	has_one :employee_type 
 
+	has_many :handsets
+
 	has_many :subordinates , foreign_key: "reports_to_id" , class_name: "Employee"
 	belongs_to :reports_to , class_name: "Employee"
 
@@ -16,7 +18,7 @@ class Employee < ActiveRecord::Base
 
 	validates :first_name , presence: true 
 	validates :last_name , presence: true 
-	validates :contact_phone , presence: true
+	validates :contact_phone , presence: true ,:numericality => { :only_integer => true }
 	validates :employee_type_id , presence: true
 	validates :reports_to_id , presence: true
 

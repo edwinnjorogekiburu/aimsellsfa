@@ -1,0 +1,33 @@
+<% provide(:title,"Edit stock issue") %>
+<div class="row">
+  <aside class="span4">
+    <section>
+     <%= render "shared/employee_side_menu" %>  
+    </section>
+  </aside>
+<div class="span8"> 
+<h2>Make returns on issued stock</h2>
+<table class='table'>
+	<thead>
+		<tr><th>Date</th><th>Item issued</th><th>Agent issued item</th><th>Quantity</th></tr>
+	</thead>
+	<tbody>
+<tr>
+<td><%= @stock_issue.created_at.strftime("%e %B %Y")%></td>
+<td><%= link_to "#{@stock_issue.item.name}" , edit_item_path(@stock_issue.item) %></td>
+<td><%= link_to "#{@stock_issue.agent.name}" , edit_agent_path(@stock_issue.agent) %></td>
+<td><%= @stock_issue.issued_quantity %></td>
+</tr>
+</tbody>	
+</table>
+<h2>Make returns on the above stock</h2>
+<hr/>
+<div class="span6">
+<%= form_tag( "/stock_issues/#{params[:id]}" , :method => :put ) do %>
+      <%= label_tag 'quantity_returned' , 'Enter amount to return' %>
+      <%= text_field_tag 'quantity_returned' ,' ', value: params[:quantity_returned] %>
+<%= submit_tag "Make returns" , class: "btn btn-large btn-primary" %>
+<% end %>
+</div>
+</div>
+</div>

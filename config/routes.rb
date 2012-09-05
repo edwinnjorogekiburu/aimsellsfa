@@ -1,6 +1,13 @@
 Aimsellsfa::Application.routes.draw do
-  
-  resources :routes
+
+  resources :handsets
+  resources :stock_issues
+  resources :routes do
+      member do
+          get :assign
+      end
+  end
+  resources :dsa_routes
   resources :location_types
   resources :locations
   resources :agents
@@ -12,9 +19,14 @@ Aimsellsfa::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :employee_sessions, only: [:new, :create, :destroy]
   resources :employee_types
+  resources :agent_sessions, only: [:new, :create, :destroy]
+  resources :onhand_quantities
+  resources :outlets
+
 
   match '/administrator/signin',  to: 'sessions#new'
   match '/signin',  to: 'employee_sessions#new'
+  match '/agent/signin', to: 'agent_sessions#new'
 
   root to: 'static_pages#home'
 
@@ -24,7 +36,10 @@ Aimsellsfa::Application.routes.draw do
 
   match '/signout', to: 'sessions#destroy', via: :delete
 
+  match '/checkout', to: 'onhand_quantities#checkout', via: :delete
+
   match '/employee_signout', to: 'employee_sessions#destroy', via: :delete
+  match '/agent_signout', to: 'agent_sessions#destroy', via: :delete
   
   match '/home', to: 'static_pages#home'
   match '/about', to: 'static_pages#about'
@@ -33,7 +48,8 @@ Aimsellsfa::Application.routes.draw do
 
   match '/employee/index', to: 'static_pages#employee_main_menu'
   match '/administrator/index', to: 'static_pages#administrator_main_menu'
-
+  match '/agent/index', to: 'static_pages#agent_main_menu'
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

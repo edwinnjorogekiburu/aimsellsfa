@@ -2,6 +2,10 @@ class Route < ActiveRecord::Base
 
 	attr_accessible :name , :location_id , :description
 
+	has_one :dsa_route , foreign_key: "route_id" , dependent: :destroy
+	has_one :agent, through: :dsa_route , source: :agent , dependent: :destroy
+	has_many :outlets
+
 	belongs_to :location , class_name: "Location"
 
 	validates :name , presence: true 

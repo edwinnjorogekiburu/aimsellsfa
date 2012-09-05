@@ -1,0 +1,4 @@
+
+<%= f.label :agent_id , "Select an agent to assign to #{@route.name}" %>
+<%= f.collection_select(:agent_id , Agent.all, :id , :name , :prompt => "Please select an agent") %>
+<%= f.hidden_field :route_id , value: @route.id %>

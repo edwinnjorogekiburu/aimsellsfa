@@ -1,0 +1,22 @@
+<% provide(:title, "Assigned Stock") %>
+
+<div class="row">
+	<aside class="span4">
+		<section>
+			<%= render "shared/agent_side_menu"%>
+		</section>
+	</aside>
+
+	<div class="span8">
+		<h2>Onhand/ Assigned Stock Quantity</h2>
+		<table class="table">
+			<thead>
+				<tr><th>Item Name</th><th>Item Description</th><th>Unit Price</th><th>Quantity</th><th>Sell Item</th></tr>
+			</thead>
+			<tbody>
+				<%= render @onhand_quantities %>
+			</tbody>
+		</table>
+		<%= link_to "Checkout of Outlet", checkout_path, method: :delete %>
+	</div>
+</div>

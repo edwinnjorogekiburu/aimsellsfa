@@ -1,0 +1,13 @@
+<h2>Stock issues</h2>
+<p><%= link_to "Issue stock" , new_stock_issue_path %></p>
+
+<%= will_paginate %>
+<table class="table">
+	<thead>
+		<tr><th>Date</th><th>Item</th><th>Agent</th><th>Unit price</th><th>Quantity</th><th>Retail value</th><th>Returns Inwards</th><th>Delete</th></tr>
+	</thead>
+<tbody>
+<%= render @stock_issues %>
+</tbody>
+</table>
+<%= will_paginate %>

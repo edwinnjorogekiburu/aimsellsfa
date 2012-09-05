@@ -1,0 +1,9 @@
+
+<tr><td><%= stock_issue.created_at.strftime("%e %B %Y") %></td>
+	<td><%= link_to "#{stock_issue.item.name}" , edit_item_path(stock_issue.item) %></td>
+	<td><%= link_to "#{stock_issue.agent.name}" , edit_agent_path(stock_issue.agent) %></td>
+	<td><%= number_to_currency(stock_issue.unit_price, unit: " Kshs. ") %></td><td><%= stock_issue.issued_quantity %></td>
+	<td><%= number_to_currency((stock_issue.issued_quantity * stock_issue.unit_price), unit: " Kshs. " ) %></td>
+	<td><%= link_to "Return" , edit_stock_issue_path(stock_issue) %></td>
+	<td><%= link_to "Delete" , stock_issue_path(stock_issue), method: :delete , data: {confirm: "Are you sure you want to delete this stock issue? "}%></td>
+</tr>

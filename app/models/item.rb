@@ -2,7 +2,8 @@ class Item < ActiveRecord::Base
 
 	attr_accessible :name , :description , :price , :retail_price , :category_id
 
-	has_one :category , foreign_key: "category_id" , class_name: "ItemCategory"
+	has_one :category , foreign_key: "category_id" , class_name: "ItemCategory" , dependent: :destroy
+	has_many :stock_issues , dependent: :destroy
 
 	validates :name , presence: true 
 	validates :description , presence: true 
