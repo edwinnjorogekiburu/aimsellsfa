@@ -4,7 +4,7 @@
 <ul class="top_level_subordinate">
 <% for subordinate in ceo.subordinates  %>
 <li><b><%= subordinate.name %></b><span class="reports_to">  -  Reports to the <%= subordinate.reports_to_type.name %>  |  <%= link_to "+Add" , new_employee_type_path( id: subordinate.id ) %> | <%= link_to "Delete"  , 
-employee_type_path(subordinate) , method: :delete , data: {confirm: "Are you sure you want to delete #{subordinate.name}"} %></span>
+employee_type_path(subordinate) , method: :delete , data: {confirm: "Are you sure you want to delete #{subordinate.name} ?"} %></span>
 <%= render partial: "subordinates" , :locals => { :subordinate => subordinate , :levels => @type_level_count }  %>
 </li>
 <% end %>
