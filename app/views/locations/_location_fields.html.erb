@@ -1,9 +1,14 @@
 <%= f.label :name %>
 <%= f.text_field :name %>
-<% if !first_location %>
+
+<% if !first_location && !@edit %>
 <%= f.label :parent_location_id , "Parent location" %>
-<%= f.collection_select(:parent_location_id , Location.all, :id , :name , :prompt => "Please select an parent location" , 
-:selected => params[:id] ) %>
+<%= f.collection_select(:parent_location_id , Location.all, :id , 
+:name , :prompt => "Please select an parent location" , :selected => params[:id] ) %>
+<% elsif @edit %>
+<%= f.label :parent_location_id , "Parent location" %>
+<%= f.collection_select(:parent_location_id , Location.all, :id , 
+:name , :prompt => "Please select an parent location"  ) %>
 <% else %>
 <%= f.hidden_field :parent_location_id , value: 0 %>
 <% end %>

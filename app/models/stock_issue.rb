@@ -1,6 +1,8 @@
 class StockIssue < ActiveRecord::Base
 	attr_accessible :agent_id , :item_id , :opening_quantity , :issued_quantity , :unit_price , :employee_id
 
+	default_scope order: 'stock_issues.created_at DESC'
+
 	belongs_to :agent
 	belongs_to :item
 	

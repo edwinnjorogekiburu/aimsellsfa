@@ -6,7 +6,7 @@
 <li><b><%= sub_location.name %></b><span class="reports_to">  -  within <%= sub_location.parent_location.name %>  |  
 	<%= link_to "+Add" , new_location_path(id: sub_location.id) %> | 
 	<%= link_to "Delete" , location_path(sub_location) , method: :delete ,
-	 data: { confirm: "Are sure you want to delete #{sub_location.name} with all its sub locations" }%></span>
+	 data: { confirm: "Are sure you want to delete #{sub_location.name} with all its sub locations ?" }%></span>
 <%= render partial: "sub_locations" , :locals => { :sub_location => sub_location  }  %>
 </li>
 <% end %>

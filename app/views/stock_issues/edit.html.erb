@@ -26,7 +26,7 @@
 <%= form_tag( "/stock_issues/#{params[:id]}" , :method => :put ) do %>
       <%= label_tag 'quantity_returned' , 'Enter amount to return' %>
       <%= text_field_tag 'quantity_returned' ,' ', value: params[:quantity_returned] %>
-<%= submit_tag "Make returns" , class: "btn btn-large btn-primary" %>
+<%= submit_tag "Make returns" , class: "btn btn-large btn-primary"  , disable_with: "Please wait..."%>
 <% end %>
 </div>
 </div>

@@ -50,7 +50,7 @@ class StockIssuesController < ApplicationController
 			      @onhand_quantity = OnhandQuantity.find_by_item_id(@stock_issue.item_id , conditions: " agent_id = #{@stock_issue.agent_id} " )
 				    if @onhand_quantity.decrement!(:onhand_quantity, by = params[:quantity_returned].to_i)
 				    	flash[:success] = "Stock returned successfully"
-				      	#redirect_to stock_issues_path
+				      	redirect_to stock_issues_path
 				    else
 				  		flash[:notice] = "Onhand quantity deduction failed"
 			      		render 'edit'

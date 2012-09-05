@@ -39,6 +39,7 @@ class LocationsController < ApplicationController
 
 	def edit
 		@location = Location.find(params[:id])
+		@edit = true
 	end
 
 	def update

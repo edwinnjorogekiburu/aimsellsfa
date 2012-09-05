@@ -7,3 +7,5 @@
 <%= f.label :location_id %>
 <%= f.collection_select(:location_id , Location.all, :id , :name , :prompt => "Please select a location" , 
 :selected => params[:id] ) %>
+
+<%= f.hidden_field :employee_id , value: current_employee.id %>
