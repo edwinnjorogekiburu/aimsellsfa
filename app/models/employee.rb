@@ -7,7 +7,7 @@ class Employee < ActiveRecord::Base
 	before_save { |employee| employee.email = email.downcase }
   	before_save :create_remember_token
 
-	has_one :employee_type , dependent: :destroy
+	belongs_to :employee_type
 
 	has_many :handsets , dependent: :destroy
 
