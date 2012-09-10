@@ -1,6 +1,6 @@
 class Outlet < ActiveRecord::Base
 
-	attr_accessible :agent_id, :route_id, :outlet_name, :contact_name, :contact_phone
+	attr_accessible :agent_id, :route_id, :name, :contact_name, :contact_phone
 
 	belongs_to :agent
 	belongs_to :route

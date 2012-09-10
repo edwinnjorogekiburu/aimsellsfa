@@ -15,7 +15,7 @@
 <%= f.label :reports_to %>
 <%= f.collection_select(:reports_to_id , Employee.all, :id , :full_name , :prompt => "Please select an employee") %>
 <% else %>
-<%= f.hidden_field :reports_to_id , value: 1 %>
+<%= f.hidden_field :reports_to_id , value: 0 %>
 <% end %>
 
 <p><b>Login Details</b></p>

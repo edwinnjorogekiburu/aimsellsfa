@@ -1,6 +1,12 @@
 <li>
+	
 	<%= link_to "#{get_employee_full_name(employee)}" , edit_employee_path(employee) %> 
-	reports to <%= link_to "#{get_employee_full_name(employee.reports_to)}" , edit_employee_path(employee.reports_to)  %>
+<% if employee_counter != 0 %>
+
+	reports to <%= link_to "#{get_employee_full_name(employee.reports_to)}" , edit_employee_path(employee.reports_to)  
+	%>
+<% end %>
+
 	 | <%= employee.contact_phone %> | 
 	<%= link_to "Delete" , employee_path(employee) ,
 	 method: :delete, data: { confirm: "Are you sure you want to delete #{get_employee_full_name(employee)}?" } %>

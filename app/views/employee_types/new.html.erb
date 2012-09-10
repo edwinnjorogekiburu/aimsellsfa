@@ -11,7 +11,7 @@
 <%= form_for(@employee_type) do |f| %>
       <%= render partial: 'shared/error_messages' , :locals => { :object => @employee_type }%>
       <%= render partial: "employee_type_fields" , :locals => {:f => f } %>
-      <%= f.submit "Create new employee type", class: "btn btn-large btn-primary" %>
+      <%= f.submit "Create new employee type", class: "btn btn-large btn-primary" , disable_with: "Please wait..." %>
 <% end %>
 </div>
 </div>

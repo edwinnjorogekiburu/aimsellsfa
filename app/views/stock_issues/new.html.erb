@@ -8,8 +8,8 @@
 <div class="span8"> 
 <h2>Issue stock to agent</h2>
     <%= form_for(@stock_issue) do |f| %>
-      <%= render partial: 'shared/error_messages' , :locals => { :object => @stock_issue }%>
-      <%= render partial: "stock_issue_fields" , :locals => {:f => f } %>
+      <%= render partial: 'shared/error_messages' , :locals => { :object => @stock_issue  }%>
+      <%= render partial: "stock_issue_fields" , :locals => {:f => f , item_price: @item_price } %>
 
       <%= f.submit "Issue stock", class: "btn btn-large btn-primary" , disable_with: "Please wait..." %>
 

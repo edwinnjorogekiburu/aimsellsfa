@@ -14,7 +14,7 @@
 		<%= form_for(@outlet) do |f| %>
 			<%= render partial: "shared/error_messages", :locals => {:object => @outlet} %>
 			<%= render partial: "outlet_fields", :locals => {:f => f } %>
-			<%= f.submit "Add an Outlet", class: "btn btn-large btn-primary" %>
+			<%= f.submit "Add an Outlet", class: "btn btn-large btn-primary" , disable_with: "Please wait..." %>
 		<% end %>
 	</div>
 </div>

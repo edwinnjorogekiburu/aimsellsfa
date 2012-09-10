@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> corrections
 <% provide(:title, "Assign Route") %>
 <div class="row">
   <aside class="span4">
@@ -13,28 +7,13 @@
   </aside>
 <div class="span8"> 
 <div class="span8">	
-<<<<<<< HEAD
->>>>>>> corrections
-=======
->>>>>>> corrections
+
 <h2>Assign <%= @route.name %> to an agent </h2>
 <%= form_for(@dsa_route) do |f| %>
 <%= render partial: 'shared/error_messages' , :locals => { :object => @dsa_route }%>
 <%= render partial: "dsa_route_fields" , :locals => {:f => f } %>
-<%= submit_tag "Assign route" , class: "btn btn-large btn-primary" %>
-<<<<<<< HEAD
-<<<<<<< HEAD
+<%= submit_tag "Assign route" , class: "btn btn-large btn-primary" , disable_with: "Please wait..." %>
 <% end %>
-=======
-=======
->>>>>>> corrections
-<% end %>
-
 </div>
 </div>
-<<<<<<< HEAD
 </div>
->>>>>>> corrections
-=======
-</div>
->>>>>>> corrections

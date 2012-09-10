@@ -3,10 +3,11 @@
 <%= f.collection_select(:agent_id , Agent.all, :id , :name , :prompt => "Please select an agent") %>
 
 <%= label_tag :item_id , "Select an item to issue with stock" %>
-<%= f.collection_select(:item_id , Item.all, :id , :name , :prompt => "Please select an item") %>
+<%= f.collection_select(:item_id , Item.all, :id , :name , :prompt => "Please select an item" , selected: params[:item]) %>
 
 <%= label_tag :unit_price , "Retail price of stock (Kshs) " %>
-<%= f.text_field :unit_price  %>
+
+<%= f.text_field :unit_price , value: item_price %>
 
 <%= f.hidden_field :opening_quantity , value: 0 %>
 

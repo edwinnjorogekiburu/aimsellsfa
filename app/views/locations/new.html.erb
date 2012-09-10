@@ -11,7 +11,7 @@
     <%= form_for(@location) do |f| %>
       <%= render partial: 'shared/error_messages' , :locals => { :object => @location }%>
       <%= render partial: "location_fields" , :locals => {:f => f , first_location: @first_location } %>
-      <%= f.submit "Create new location", class: "btn btn-large btn-primary" %>
+      <%= f.submit "Create new location", class: "btn btn-large btn-primary" , disable_with: "Please wait..."%>
 <% end %>
 </div>
 </div>

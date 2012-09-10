@@ -4,6 +4,11 @@ class StockIssuesController < ApplicationController
 
 	def new
 		@stock_issue = StockIssue.new
+		if item=Item.find_by_id(params[:item])
+			@item_price = item.retail_price.to_i
+		else
+			@item_price = ""
+		end
 	end
 
 	def create
@@ -27,7 +32,11 @@ class StockIssuesController < ApplicationController
       	end
       end
     else
+      if params[:stock_issue][:unit_price]
+      	@item_price = params[:stock_issue][:unit_price]
+      end
       render 'new'
+
     end
 
 	end

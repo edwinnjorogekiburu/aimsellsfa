@@ -12,9 +12,7 @@ class Employee < ActiveRecord::Base
 	has_many :handsets , dependent: :destroy
 
 	has_many :subordinates , foreign_key: "reports_to_id" , class_name: "Employee" , dependent: :destroy
-	belongs_to :reports_to , class_name: "Employee" , dependent: :destroy
-
-	has_one :manager , dependent: :destroy
+	belongs_to :reports_to , class_name: "Employee" 
 
 	has_many :routes , dependent: :destroy
 
