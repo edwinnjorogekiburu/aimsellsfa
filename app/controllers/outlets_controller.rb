@@ -3,7 +3,12 @@ class OutletsController < ApplicationController
   before_filter :signed_in_agent
 
   def index
-  	@outlets = Outlet.paginate(page: params[:page], conditions: "agent_id = #{current_agent.id} AND route_id = #{current_agent.route.id}" )
+    if current_agent.route.id
+  	     @outlets = Outlet.paginate(page: params[:page], conditions: "agent_id = #{current_agent.id} AND route_id = #{current_agent.route.id}" )
+    else
+         @outlets = Outlet.paginate(page: params[:page], conditions: "agent_id = #{current_agent.id} AND route_id = #{current_agent.route.id}" )  
+         flash[:notice] = "You have not been assigned a route please request your distributor to assign you one"
+    end
   end
 
   def new
