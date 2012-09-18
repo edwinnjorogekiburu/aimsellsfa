@@ -12,7 +12,11 @@ class OutletsController < ApplicationController
   end
 
   def new
-  	@outlet = Outlet.new
+    if current_agent.route
+  	   @outlet = Outlet.new
+    else
+        render 'index'
+    end
   end
 
   def create
@@ -27,7 +31,11 @@ class OutletsController < ApplicationController
   end
 
   def edit
-  	@outlet = Outlet.find(params[:id], conditions: "agent_id=#{current_agent.id}" )
+    if current_agent.route
+  	  @outlet = Outlet.find(params[:id], conditions: "agent_id=#{current_agent.id}" )
+    else
+      render 'index'
+    end
   end
 
   def update
