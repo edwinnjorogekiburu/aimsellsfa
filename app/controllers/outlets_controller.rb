@@ -6,7 +6,7 @@ class OutletsController < ApplicationController
     if current_agent.route.id
   	     @outlets = Outlet.paginate(page: params[:page], conditions: "agent_id = #{current_agent.id} AND route_id = #{current_agent.route.id}" )
     else
-         @outlets = Outlet.paginate(page: params[:page], conditions: "agent_id = #{current_agent.id} AND route_id = #{current_agent.route.id}" )  
+         @outlets = Outlet.paginate(page: params[:page], conditions: "agent_id = #{current_agent.id}" )  
          flash[:notice] = "You have not been assigned a route please request your distributor to assign you one"
     end
   end
