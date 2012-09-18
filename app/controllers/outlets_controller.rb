@@ -3,7 +3,7 @@ class OutletsController < ApplicationController
   before_filter :signed_in_agent
 
   def index
-    if current_agent.route.id
+    if current_agent.route
   	     @outlets = Outlet.paginate(page: params[:page], conditions: "agent_id = #{current_agent.id} AND route_id = #{current_agent.route.id}" )
     else
          @outlets = Outlet.paginate(page: params[:page], conditions: "agent_id = #{current_agent.id}" )  
